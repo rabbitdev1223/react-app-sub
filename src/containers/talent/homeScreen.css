@@ -1,0 +1,109 @@
+.slogan-description-background {
+  width: 100%;
+  border-radius: 0rem;
+  margin-bottom: 0rem;
+  margin-top: 3.5rem;
+  background-color: transparent!important;
+  position: absolute;
+}
+.slogan-description-background h1,
+.slogan-description-background p {
+  color: #20426f!important;
+}
+.home-buttons-container {
+  width: 100%;
+  border-radius: 0rem;
+  margin-bottom: 0rem;
+  margin-top: 3.5rem;
+	background-color: transparent!important;
+  position: absolute;
+}
+
+.home-button {
+  display: block!important;
+	width: 100%;
+	border-radius: 13px!important;
+}
+
+.home-button-title {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 0.8rem;
+	line-height: 1.3;
+	text-transform: none;
+}
+
+.home-button-title-only {
+  font-size: 2rem;
+  font-weight: 600;
+  padding-top: 0.8rem;
+	padding-bottom: 0.8rem;
+	line-height: 1.3;
+	text-transform: none;
+}
+
+.home-button-status {
+  color: #d6d7d8;
+	text-transform: none;
+	padding-top: 1rem;
+	padding-bottom: 0.2rem;
+	font-weight: 500;
+}
+
+.home-background-image {
+  /*width: 100%;*/
+  width: 1920px;
+  height: 1080px;
+}
+.my-account{
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+.my-account button{
+  background-color: transparent !important;
+}
+.my-account button span{
+  color: white !important
+}
+.ml-auto .d-block a{
+  color: white !important;
+}
+.ml-auto .d-block a svg{
+  color: white !important;
+  fill: white !important;
+}
+
+.details-content {
+  position: relative;
+  width: 100%;
+  padding: 20px;
+  padding-bottom: 30px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0 4px 16px -2px rgba(0, 0, 0, 0.1), 0 0 0 1px rgba(0, 0, 0, 0.02);
+  border-radius: 3px;
+  margin-bottom: 30px; }
+  .details-content img {
+    height: 240px;
+    margin: 0 auto; }
+  .details-content .favorite {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer; }
+  .details-content h5 {
+    padding-top: 10px;
+    padding-bottom: 5px; }
+  .details-content .price {
+    margin: 0;
+    color: #258df2;
+    padding-bottom: 10px; }
+@media only screen and (max-width: 575px) {
+  .my-account button{
+    text-align: left !important;
+  }
+  div[role="presentation"],
+  div[role="menu"] {
+    width: 91vw !important;
+  }
+}

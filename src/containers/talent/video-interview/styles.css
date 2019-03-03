@@ -1,0 +1,287 @@
+
+.video-interview {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.video-interview-header {
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #000;
+}
+.video-interview-header:after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.video-interview-live-header {
+  margin-bottom: 20px;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  /*border-bottom: 2px solid #000;*/
+}
+.btnn-start-practice {
+  margin: 10px auto;
+  font-size: 23px;
+}
+
+.camera-box {
+  margin-top: 100px;
+}
+
+.audio-box {
+  position: relative;
+  margin: 1rem auto;
+  top: 3px;
+  height: 25px;
+  width: 100%;
+}
+.audio-box img{
+  vertical-align: top;
+  margin-right: 10px;
+  height: 20px;
+  display: inline-block;
+}
+
+.video-practice {
+  margin-top: 110px;
+}
+
+.video-practice .camera-box video {
+  margin-left: -150px;
+}
+
+.camera-box {
+  padding: 0 100px;
+}
+
+.question-header {
+  font-weight: 600;
+  font-size: 28px;
+}
+
+.question-text {
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.question-time-title-row {
+  width: 100%;
+}
+
+.question-time-title-parent-col {
+  border: 2px solid gray;
+  border-radius: 10px;
+}
+.question-time-title-parent-button-col {
+  padding-right: 0px!important;
+}
+
+.question-time-col {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.question-time {
+  /*margin-top: 30px;*/
+  padding-left: 10px;
+  font-weight: 600;
+  line-height: 1.5rem;
+}
+.video-box{
+  width: 70%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.video-status{
+  /*border: 1px solid #333;*/
+  width: 100%;
+}
+.video-webcam {
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.video-webcam-col {
+  height: 100%;
+  padding: 0px!important;
+}
+.video-status > div{
+  padding: 10px;
+}
+.video-status > div:first-child{
+  /*border-right: 1px solid #333;*/
+}
+.video-status p {
+  margin-bottom: 0px;
+}
+.video-status p b{
+  color: #F00;
+}
+.video-playback {
+  text-align: center;
+}
+.video-progress {
+  height: 7px;
+  width: 100%;
+}
+.react-player {
+  margin: auto;
+}
+
+.btn-vpb {
+  margin-top: 20px;
+  width: 250px;
+}
+
+.playbackbtn-wrapper, .livebuttons-wrapper {
+  /*margin-top: 15px;*/
+  text-align: center;
+  padding: 0px!important;
+  height: 100%!important;
+}
+.playbackbtn-wrapper button {
+  height: 100%!important;;
+}
+.btn-video-buttons{
+  margin-top: 20px;
+  font-size: 12px;
+}
+.livebuttons-wrapper .btn-video-buttons{
+  margin-top: 0px;
+}
+.btn-video-buttons button{
+  height: auto !important;
+  line-height: 1.2 !important;
+}
+.btn-video-buttons button > div > div{
+  padding: 8px 0 !important;
+}
+.btn-video-buttons button div{
+  height: auto !important;
+}
+.video_container{
+  text-align: center;
+}
+.video-black{
+  background-color: #FFF;
+  width: 100vw;
+  height: calc(100vh - 102px);
+  margin: -15px;
+}
+canvas {
+  background: gray;
+}
+.record-btn-wrapper {
+    text-align: center;
+    margin-top: 20px;    
+    /*display: inline-block;*/
+}
+
+.btn-start-stop button {
+    background-color: #C00 !important;
+}
+.btn-start-stop button span{
+    color: white !important;
+}
+.btn-start-start, .btn-start-stop, .btn-playback{
+  /*width: 240px;*/
+  height: 100%;
+}
+.btn-start-start button {
+  height: 100%!important;
+}
+.btn-start-stop button {
+  height: 100%!important;
+}
+.btn-playback button {
+  height: 100%!important;
+}
+
+.spinner{
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  padding-top: 150px;
+}
+.spinner:after {
+  content: "";
+  align-items: end;
+  background-color: black;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100vw;
+  position: fixed;
+  z-index: 10000;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+}
+.loading{
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #0275d8; /* Blue */
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin-right: 10px;
+}
+.loading_text {
+  display: inherit;
+  line-height: 40px;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  background: #333;
+  height: 70px;
+  padding: 15px;
+  border-radius: 5px;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.video-interview-body{
+  margin-top: 30px;
+  font-size: 24px;
+  line-height: 2.0;
+}
+.video-instruction-body{
+  font-size: 17px;
+  text-align: left;
+  line-height: 1.6;
+}
+.video-access-body{
+  height: 600px;
+}
+.video-access-body p{
+  font-size: 24px;
+}
+div.dlg-select {
+  width: 100% !important;
+}
+.interview-status{
+  color: #F00;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.disabled_raied_button {
+  background-color: gray;
+}
+.disabled_raied_button button {
+  background-color: gray!important;
+}

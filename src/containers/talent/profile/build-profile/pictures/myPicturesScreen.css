@@ -1,0 +1,95 @@
+.profile-picture-image {
+  width: 150px;
+  height: 180px;
+  object-fit: cover;
+}
+
+.profile-picture-info-view-container {
+  padding-top: 33px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+@media only screen and (max-width: 900px) {
+  .profile-picture-info-view-container{
+    padding-top: 33px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .profile-picture-info-view-container{
+    padding-top: 33px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+.profile-picture-image-col {
+  text-align: center;
+}
+
+.profile-picture-image-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.profile-picture-dropzone {
+  margin-left: auto!important;
+  margin-right: auto!important;
+  position: relative;
+  width: 200px;
+  height: 170px;
+  border-width: 2px;
+  border-color: rgb(102, 102, 102);
+  border-style: dashed;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+}
+
+.profile-picture-loading-image {
+
+}
+
+.profile-picture-dropzone-description {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-picture-dropzone-select-file-button {
+  border-width: 2px;
+  border-color: rgb(102, 102, 102);
+  border-style: solid;
+  border-radius: 5px;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.profile-picture-delete-icon {
+  color: white;
+  border-radius: 2px;
+  background: red;
+  font-weight: 600;
+  position: relative;
+  top: 27px;
+  left: 60px;
+}
+
+.profile-picture-delete-icon:hover{
+  color: rgb(255, 255, 255, 0.7);
+  background: rgb(255, 0, 0, 0.7);
+}
+
+.profile-picture-delete-icon-disabled {
+  color: #d7d7d7!important;
+  border-radius: 2px;
+  background: #d7d7d7;
+  font-weight: 600;
+  position: relative;
+  top: 35px;
+  left: 59px;
+}
