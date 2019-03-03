@@ -2,5 +2,5 @@ node_modules
 build
 .idea
 .vscode
-yan-error.log
+yarn-error.log
 yarn.lock

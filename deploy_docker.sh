@@ -4,13 +4,13 @@
 docker-compose down
 docker-compose stop
 
-# Re-build npm on local
+# Re-build yarn on local
 export NVM_DIR="$HOME/.nvm"
 source ~/.nvm/nvm.sh
 
 nvm use 11.2.0
-npm install
-npm run build
+yarn install
+yarn run build
 
 # Re-build docker container
 docker-compose build --no-cache

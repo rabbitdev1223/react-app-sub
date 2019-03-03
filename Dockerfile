@@ -1,5 +1,5 @@
 # base image
-FROM node:9.8.0
+FROM node:11.2.0
 
 # set working directory
 RUN mkdir /usr/src/shiptalent_frontend
@@ -10,9 +10,9 @@ ENV PATH /usr/src/shiptalent_frontend/node_modules/.bin:$PATH
 
 # install and cache shiptalent_frontend dependencies
 COPY package.json /usr/src/shiptalent_frontend/package.json
-RUN npm install
-# RUN npm install react-scripts@1.1.1 -g --silent
-# RUN npm run build
+RUN yarn install
+# RUN yarn install react-scripts@1.1.1 -g --silent
+# RUN yarn run build
 
 # start app
-CMD ["npm", "start"]
+CMD ["yarn", "start"]
