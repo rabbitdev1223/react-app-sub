@@ -12,7 +12,7 @@ ENV PATH /usr/src/shiptalent_frontend/node_modules/.bin:$PATH
 COPY package.json /usr/src/shiptalent_frontend/package.json
 RUN yarn install
 # RUN yarn install react-scripts@1.1.1 -g --silent
-# RUN yarn run build
+RUN yarn run build
 
 # start app
 CMD ["yarn", "start"]
