@@ -1,6 +1,6 @@
 export default {
-    server: "http://192.168.0.121:8000",
-    url: "http://192.168.0.121:8000/api/v1",
+    server: process.env.REACT_APP_API_SERVER,
+    url: process.env.REACT_APP_API_URL,
     formHeaders: {
         'Content-Type': 'application/json, application/x-www-form-urlencoded; charset=UTF-8'
     }

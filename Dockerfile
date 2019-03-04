@@ -16,4 +16,4 @@ COPY . .
 # RUN yarn build
 
 # start app
-CMD ["yarn", "start"]
+CMD ["yarn", "start-production"]
