@@ -11,8 +11,9 @@ ENV PATH /usr/src/shiptalent_frontend/node_modules/.bin:$PATH
 # install and cache shiptalent_frontend dependencies
 COPY package.json /usr/src/shiptalent_frontend/package.json
 RUN yarn install
-# RUN yarn install react-scripts@1.1.1 -g --silent
-RUN yarn run build
+COPY . .
+# npm install --save --save-exact react-scripts@1.1.2
+# RUN yarn build
 
 # start app
 CMD ["yarn", "start"]
