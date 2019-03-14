@@ -1,4 +1,4 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
@@ -14,6 +14,9 @@ jobs:
       - run: npm run build
       - store_artifacts:
           path: /tmp/shiptalent_frontend
+
+  deploy:
+    steps:
       - add_ssh_keys:
           fingerprints:
             - "59:63:48:e2:78:3c:c8:1b:42:6b:32:26:e6:8b:78:5a"
