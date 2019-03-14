@@ -16,10 +16,22 @@ jobs:
           path: /tmp/shiptalent_frontend
 
   deploy:
+    machine:
+      enabled: true
     steps:
       - add_ssh_keys:
           fingerprints:
             - "59:63:48:e2:78:3c:c8:1b:42:6b:32:26:e6:8b:78:5a"
       - run:
           name: Deploy app from docker repository to server
-          command: ssh -o StrictHostKeyChecking=no ubuntu@35.168.133.148 "/bin/bash /home/ubuntu/shiptalent/deploy_app.sh valeriia333/shiptalent_frontend:latest"
+          command: |
+            ssh -o StrictHostKeyChecking=no ubuntu@52.207.72.245 "/bin/bash /home/ubuntu/shiptalent/deploy_frontend.sh valeriia333/shiptalent_frontend:latest"
+
+workflows:
+  version: 2.1
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
