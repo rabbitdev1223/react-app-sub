@@ -9,11 +9,8 @@ jobs:
 
     steps:
       - checkout
-      - run: mkdir -p /tmp/shiptalent_frontend
       - run: npm install
       - run: npm run build
-      - store_artifacts:
-          path: /tmp/shiptalent_frontend
 
   deploy:
     machine:
