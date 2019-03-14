@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: valeriia333/shiptalent_frontend:latest
+        auth:
+          username: $MY_DOCKERHUB_USER
+          password: $MY_DOCKERHUB_PASSWORD
+
+    steps:
+      - checkout
+      - run: mkdir -p /tmp/shiptalent_frontend
+      - run: npm install
+      - run: npm run build
+      - store_artifacts:
+          path: /tmp/shiptalent_frontend
+      - add_ssh_keys:
+          fingerprints:
+            - "59:63:48:e2:78:3c:c8:1b:42:6b:32:26:e6:8b:78:5a"
+      - run:
+          name: Deploy app from docker repository to server
+          command: ssh -o StrictHostKeyChecking=no ubuntu@35.168.133.148 "/bin/bash /home/ubuntu/shiptalent/deploy_app.sh valeriia333/shiptalent_frontend:latest"
