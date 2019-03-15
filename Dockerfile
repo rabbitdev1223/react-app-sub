@@ -8,16 +8,15 @@ ENV REACT_APP_API_SERVER ${REACT_APP_API_SERVER}
 ENV REACT_APP_API_URL ${REACT_APP_API_URL}
 # add `/usr/src/shiptalent_frontend/node_modules/.bin` to $PATH
 ENV PATH /usr/src/shiptalent_frontend/node_modules/.bin:$PATH
-# RUN if [ ${NODE_ENV} = production ]; run command; else run another command; fi
 
 # set working directory
 RUN mkdir /usr/src/shiptalent_frontend
 WORKDIR /usr/src/shiptalent_frontend
 
-
-
 # install and cache shiptalent_frontend dependencies
 COPY package.json /usr/src/shiptalent_frontend/package.json
+COPY production.env /usr/src/shiptalent_frontend/production.env
+
 RUN yarn install
 RUN yarn build
 
