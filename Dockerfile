@@ -13,7 +13,7 @@ COPY package.json /usr/src/shiptalent_frontend/package.json
 RUN yarn install
 COPY . .
 # npm install --save --save-exact react-scripts@1.1.2
-# RUN yarn build
+# RUN yarn run build
 
 # start app
-CMD ["yarn", "start-production"]
+CMD ["yarn", "start"]

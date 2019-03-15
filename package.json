@@ -64,9 +64,9 @@
     "video-react": "^0.13.0"
   },
   "scripts": {
-    "start": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=.env",
-    "start-production": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=.env_production",
-    "build": "node -r dotenv/config ./node_modules/.bin/react-scripts build dotenv_config_path=.env_production",
+    "start": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=dotenv/config/.env",
+    "start-production": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=dotenv/config/.env_production",
+    "build": "node -r dotenv/config ./node_modules/.bin/react-scripts build dotenv_config_path=dotenv/config/.env_production",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
