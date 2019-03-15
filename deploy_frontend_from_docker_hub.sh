@@ -3,30 +3,36 @@
 # parameters:
 # docker_repo
 # interval. default 10
-# timetou. default 1800
+# timeout. default 1800
 function check_docker_repo () {
-    prev_image_state=$(docker images | grep "${1}")
+    prev_image_state=$(docker images | grep ${1})
+    echo ${prev_image_state}
     previous_time=$(date +%s)
+    echo ${prev_image_state} ${previous_time}
+
     while true ; do
         docker pull $1
 
-        current_image_state=$(docker images | grep "${1}")
+        current_image_state=$(docker images | grep ${1})
         
         currenttime=$(date +%s)
         duration=$(( $currenttime - $previous_time ))
 
-        if [[ "${prev_image_state}" == "" ]]; then
+        echo ${current_image_state} ${currenttime} ${duration}
+        
+        echo ${prev_image_state} ${previous_time}
+        if [[ ${prev_image_state} == "" ]]; then
             echo "success: ${1} was pulled with lateast version from docker hub."
             return 1
-        elif [[ "${prev_image_state}" == "${current_image_state}" ]]; then
-            echo "success: ${1} was pulled with lateast version from docker hub."
+        elif [[ "${prev_image_state}" != "${current_image_state}" ]]; then
+            echo "success: ${1} was already updated with lateast version from docker hub."
             return 1
         elif [[ "$currenttime" > "${3}" ]]; then 
             break
         else
-            echo "processing: wating until will complete to building ${1} docker on docker hub..."
+            echo "processing: wating until will complete to build ${1} on docker hub..."
         fi
-        sleep "${2}"
+        sleep ${2}
     done
 
     echo "failed: timed out to pull ${1} from docker hub."
@@ -54,15 +60,15 @@ EOF
     # docker rmi $(docker images -f "dangling=true" -q)
 }
 
-echo "logining to docker hub..."
+echo "Logining to docker hub..."
 docker login -u $1 -p $2
-echo "logged in with "${1}" user to docker hub..."
+echo "Logged in with ${1} user to docker hub..."
 
-echo "pulling docker iamge from docker hub..."
+echo "Pulling docker image from docker hub..."
 check_docker_repo $3 10 1800
 
 # if [[ $? == 1 ]]; then
-echo "removing every gabage docker images..."
+echo "Removing every gabage docker images..."
 # remove_gabage_docker_images
 docker container prune << EOF
 y
