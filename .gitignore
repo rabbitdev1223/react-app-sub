@@ -2,7 +2,7 @@ node_modules
 build
 yarn-error.log
 .DS_Store
-build
+build/
 package-lock.json
 logs
 .idea
