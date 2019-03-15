@@ -20,6 +20,9 @@ class App extends Component {
   }
 
   componentDidMount(){
+    console.log('===== process.env: ', process.env);
+
+
     document.title = "ShipTalent";
   }
 
