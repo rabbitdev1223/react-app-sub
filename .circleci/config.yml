@@ -10,7 +10,7 @@ jobs:
     steps:
       - checkout
       - run: yarn install
-      # - run: npm run build
+      - run: yarn build
 
   deploy:
     machine:

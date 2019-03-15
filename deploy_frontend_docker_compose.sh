@@ -10,7 +10,7 @@ source ~/.nvm/nvm.sh
 
 nvm use 11.2.0
 yarn install
-yarn run build
+yarn build
 
 # Re-build docker container
 docker-compose build --no-cache
