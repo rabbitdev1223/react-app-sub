@@ -67,6 +67,7 @@
     "start": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=dotenv/config/.env",
     "start-production": "node -r dotenv/config ./node_modules/.bin/react-scripts start dotenv_config_path=dotenv/config/.env_production",
     "build": "node -r dotenv/config ./node_modules/.bin/react-scripts build dotenv_config_path=dotenv/config/.env_production",
+    "deploy": "aws s3 sync build/ s3://shiptalent-frontend-cdn",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },

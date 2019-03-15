@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: valeriia333/shiptalent_frontend:latest
+      - image: $DOCKER_REPOSITORY:predefined
         auth:
           username: $MY_DOCKERHUB_USER
           password: $MY_DOCKERHUB_PASSWORD
