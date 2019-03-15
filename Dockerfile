@@ -19,9 +19,10 @@ WORKDIR /usr/src/shiptalent_frontend
 # install and cache shiptalent_frontend dependencies
 COPY package.json /usr/src/shiptalent_frontend/package.json
 RUN yarn install
+RUN yarn build
+
 COPY . .
 # npm install --save --save-exact react-scripts@1.1.2
-# RUN yarn run build
 
 # start app
 CMD ["yarn", "start-production"]
