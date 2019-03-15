@@ -22,7 +22,7 @@ jobs:
       - run:
           name: Deploy app from docker repository to server
           command: |
-            ssh -o StrictHostKeyChecking=no ubuntu@52.207.72.245 "/bin/bash /home/ubuntu/shiptalent/deploy_frontend.sh $MY_DOCKERHUB_USER $MY_DOCKERHUB_PASSWORD valeriia333/shiptalent_frontend:latest"
+            ssh -o StrictHostKeyChecking=no $TARGET_SERVER_USER_NAME@$TARGET_SERVER_ADDRESS "/bin/bash $DEPLOYMENT_SCRIPT_FILE_PATH $MY_DOCKERHUB_USER $MY_DOCKERHUB_PASSWORD $DOCKER_REPOSITORY:$DOCKER_REPOSITORY_TAG"
 
 workflows:
   version: 2.1
