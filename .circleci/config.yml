@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: $DOCKER_REPOSITORY:predefined
+      - image: $DOCKER_REPOSITORY:$DOCKER_REPOSITORY_TAG
         auth:
           username: $MY_DOCKERHUB_USER
           password: $MY_DOCKERHUB_PASSWORD
