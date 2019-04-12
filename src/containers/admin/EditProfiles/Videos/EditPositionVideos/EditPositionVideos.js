@@ -6,7 +6,7 @@ import Panel from "components/general/panel";
 import AdminForm from 'components/shiptalent/forms/adminForm';
 import OverviewVideo from '../OverviewVideo';
 import Spacer from 'components/general/spacer';
-import { filterSubSkillVideosByPosition, findPositionTypeById, getSubSkillsWithVideoByPositionType } from 'utils/appUtils';
+import { filterSubSkillVideosByPosition, getSubSkillsWithVideoByPositionType } from 'utils/appUtils';
 import { adminStyles } from 'styles';
 
 
@@ -31,9 +31,8 @@ class EditPositionVideos extends React.Component  {
   };
 
   renderContent() {
-    const { allPositionTypes, allSkills, profile, classes } = this.props;
+    const { allSkills, profile, classes } = this.props;
     const { positionType } = this.state;
-    // let positionType = findPositionTypeById(allPositionTypes, positionId);
     
     let subSkillsWithVideo = getSubSkillsWithVideoByPositionType(allSkills, positionType);
     let currentVideos = profile ? filterSubSkillVideosByPosition(allSkills, profile.talent_video_sub_skills, positionType) : [];

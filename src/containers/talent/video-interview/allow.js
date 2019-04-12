@@ -13,16 +13,6 @@ import Spacer from 'components/general/spacer';
 import { getValueFromLocation } from 'utils/appUtils';
 import { styles } from 'styles';
 
-const customStyles={
-  raisedLongButton: {
-    whiteSpace: "normal",
-    width: "320px",
-  },
-  checkbox: {
-    marginBottom: 16,
-  },
-}
-
 class InterviewDeviceAllow extends React.Component {
   constructor() {
     super();
@@ -90,8 +80,7 @@ class InterviewDeviceAllow extends React.Component {
   }
 
   renderContents(position) {
-    let positionName = position ? position.name : '' ;
-    const { audioDevice, audioAllow, videoDevice, videoAllow, errors } = this.state;
+    const { audioAllow, videoAllow, errors } = this.state;
     const { classes } = this.props;
 
     return (

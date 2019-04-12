@@ -20,7 +20,7 @@ import Spacer from 'components/general/spacer';
 import TalentPictures from 'components/shiptalent/views/TalentPictures';
 import apiConfig from 'constants/api';
 import defaultValues from 'constants/defaultValues';
-import { makeTitleWithAllPositionTypes, existSkill } from 'utils/appUtils';
+import { makeTitleWithAllPositionTypes } from 'utils/appUtils';
 import * as talentActions from 'actions/talentActions';
 import { getSubSkillVideoNumbersByPositionType } from 'utils/appUtils'
 import { styles } from 'styles';
@@ -63,8 +63,6 @@ class ViewProfile extends Component {
   getInfoFromProps(props) {
 
     const {
-      talent_position_types,
-      talent_position_sub_types,
       talent_skills,
       user,
       nationality,
@@ -526,24 +524,6 @@ class ViewProfile extends Component {
         </Grid>
       </Grid>
     );
-
-    return (
-      <Row>
-        <Col md="12" className="pt-2 pt-md-2">
-          <Typography className="profile-picture-name">{"Biography"}</Typography>
-        </Col>
-        <Col md="12" className="profile-general-info-value pt-1 pt-md-1">
-          <TextField
-            id="multiline-static"
-            multiline
-            rows="8"
-            value={bio}
-            fullWidth
-            className="profile-bio-textfield"
-          />
-        </Col>
-      </Row>
-    )
   }
 
   renderPositionButtons() {
@@ -637,7 +617,7 @@ class ViewProfile extends Component {
   }
 
   renderVideoButtonsGroup() {
-    const { classes, allPositionTypes } = this.props;
+    const { classes } = this.props;
     const { talent_video_greetings } = this.state;
 
     return (
@@ -803,8 +783,7 @@ class ViewProfile extends Component {
       </div>
     );
 
-
-    return(
+    return (
       <div className="profile-container">
         {this.state.notification && <Alert color="info">{this.state.notification}</Alert>}
         <Row className="details-content">

@@ -15,7 +15,7 @@ class CastingRequestTableWithFilterCondition extends Component {
   }
 
   initialize = (props) => {
-    const { filterCondition, location } = props;
+    const { filterCondition } = props;
     console.log('===== filterCondition: ', filterCondition);
     if (filterCondition) {
       AdminAPI.searchCastingRequest(filterCondition, this.handleCastingRequestsResponse);
@@ -39,7 +39,7 @@ class CastingRequestTableWithFilterCondition extends Component {
   }
 
   render() {
-    const { profile, path } = this.props;
+    const { path } = this.props;
     const { castingRequests } = this.state;
     return (
       (castingRequests) ? (

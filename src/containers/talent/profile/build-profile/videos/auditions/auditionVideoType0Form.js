@@ -18,7 +18,7 @@ import VideoUploader from 'components/shiptalent/uploaders/videoUploader';
 import HelpfulHintForm from 'components/shiptalent/forms/helpfulHintForm';
 import TalentAPI from 'apis/talentAPIs';
 import apiConfig from 'constants/api';
-import { findVideoByPriority, findVideoIndexByPriority } from 'utils/appUtils';
+import { findVideoByPriority } from 'utils/appUtils';
 
 
 class AuditionVideoType0Form extends Component {
@@ -72,7 +72,6 @@ class AuditionVideoType0Form extends Component {
         video_audition_title,
         video_audition_sub_title,
         helpful_hint,
-        download_link,
         introduction_title,
         introduction_link,
         instruction_button_title,
@@ -177,9 +176,8 @@ class AuditionVideoType0Form extends Component {
   };
 
   renderOneVideo = () => {
-    const { classes, talentInfo } = this.props
+    const { talentInfo } = this.props
     const {
-      subSkill,
       talent_video_sub_skills,
       id,
       name,
@@ -219,7 +217,7 @@ class AuditionVideoType0Form extends Component {
   }
 
   renderTwoVideos = () => {
-    const { classes, talentInfo } = this.props
+    const { talentInfo } = this.props
     const {
       subSkill,
       talent_video_sub_skills,
@@ -279,11 +277,10 @@ class AuditionVideoType0Form extends Component {
   }
 
   renderFourVideos = () => {
-    const { classes, talentInfo } = this.props
+    const { talentInfo } = this.props
     const {
       subSkill,
       talent_video_sub_skills,
-      helpful_hint
     } = this.state
     let signApi = ''
     let completeApi = ''
@@ -328,23 +325,15 @@ class AuditionVideoType0Form extends Component {
   }
 
   renderVideos() {
-    const { classes, talentInfo } = this.props
+    const { classes } = this.props
     const {
-      subSkill,
-      talent_video_sub_skills,
-      id,
-      name,
-      helpful_hint,
       video_counts,
-      video_audition_button_title,
       video_audition_title,
       video_audition_sub_title,
       introduction_title,
       introduction_link,
       instruction_button_title,
       instruction_button_link,
-      download_link,
-      is_special_video_audition
     } = this.state
 
     let renderVideosStep = this.renderOneVideo;
@@ -362,8 +351,6 @@ class AuditionVideoType0Form extends Component {
         renderVideosStep = this.renderOneVideo;
         break;
     }
-
-    let title = video_audition_title
 
     return (
       <Grid container spacing={16} justify="center" alignItems="center">
@@ -404,7 +391,7 @@ class AuditionVideoType0Form extends Component {
   }
 
   renderContents() {
-    const { classes, contentTitle, allPositionTypes } = this.props
+    const { classes, contentTitle } = this.props
     const { subSkill, checkedOptOut } = this.state
     let name = subSkill ? subSkill.name : ''
 

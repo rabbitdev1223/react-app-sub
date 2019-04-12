@@ -1,12 +1,8 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import { Alert } from 'reactstrap';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import Panel from 'components/general/panel';
-import { generateLinkWithPosition } from 'utils/appUtils'
 import MusicianIntroCommon from './musicianIntroCommon';
 import styles from 'styles';
 
@@ -31,8 +27,7 @@ class MusicianIntroMainForm extends Component {
   }
 
   renderContents() {
-    const { classes, formTitle } = this.props;
-    const { position } = this.state;
+    const { formTitle } = this.props;
 
     return (
       <Panel>

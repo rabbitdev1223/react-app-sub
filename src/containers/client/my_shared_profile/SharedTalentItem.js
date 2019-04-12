@@ -3,13 +3,13 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import TalentItem from '../find_talent/talentItem';
 import TeamMemberList from './TeamMemberList';
-import styles, {themeClientSpecialActionButton} from 'styles';
+import styles from 'styles';
 
 
 class SharedTalentItem extends Component {
 
   render() {
-    const { sharedProfile, classes } = this.props;
+    const { sharedProfile } = this.props;
     const {talent, team_members }= sharedProfile;
 
     if (sharedProfile && talent) {

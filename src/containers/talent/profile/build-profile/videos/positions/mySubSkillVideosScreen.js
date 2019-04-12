@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import TalentBuildProfileForm from 'components/shiptalent/forms/talentBuildProfileForm';
-import TalentSubSkillVideosForm from './talentSubSkillVideosForm';
 import AuditionVideoType0Form from 'containers/talent/profile/build-profile/videos/auditions/auditionVideoType0Form';
 import AuditionVideoType1Form from 'containers/talent/profile/build-profile/videos/auditions/auditionVideoType1Form';
 import AuditionVideoType2Form from 'containers/talent/profile/build-profile/videos/auditions/auditionVideoType2Form';
@@ -24,14 +23,14 @@ class MySubSkillVideos extends Component {
         state: { position: position }
       }
 
-    let title = ''
+    // let title = ''
     let formTitle = ''
 
     let contentLayout = AuditionVideoType0Form
     if (subSkill) {
-      title = subSkill.video_audition_button_title
-              ? subSkill.video_audition_button_title
-              : `My ${subSkill.name} Videos`
+      // title = subSkill.video_audition_button_title
+      //         ? subSkill.video_audition_button_title
+      //         : `My ${subSkill.name} Videos`
       formTitle = subSkill.form_title
 
       switch(subSkill.video_audition_type) {

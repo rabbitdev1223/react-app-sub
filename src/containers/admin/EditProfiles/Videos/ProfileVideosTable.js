@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Spacer from 'components/general/spacer';
 import GreetingVideoItem from './GreetingVideoItem';
 import PositionVideoItem from './PositionVideoItem';
 import { getSubSkillVideosByPositionType, getLiveVideosByPositionName, getCurrentTalentPositionName } from 'utils/appUtils';
@@ -10,7 +9,7 @@ import { adminStyles } from 'styles';
 
 class ProfileVideosTable extends Component {
   render() {
-    const { profile, greetingsVideos, interviewVideos, subSkillVideos, allPositionTypes, allSkills, classes } = this.props;
+    const { profile, greetingsVideos, interviewVideos, subSkillVideos, allPositionTypes, allSkills } = this.props;
 
     return (
         <Grid container spacing={32} justify="center" alignItems="center">

@@ -4,9 +4,10 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import ImageLoader from 'react-loading-image';
 import {
-  makeTitleWithAllPositionTypes, getSexTitle, getAvatarFromTalentInfo, makeTalentOverviewTitle
+  getAvatarFromTalentInfo, makeTalentOverviewTitle
 } from 'utils/appUtils';
 import styles from 'styles';
 
@@ -34,7 +35,7 @@ class TalentItem extends Component {
               <ImageLoader
                 src={talent_picture}
                 className={classes.clientTalentSearchResultPicture}
-                loading={() => <div className={classes.clientTalentSearchResultPicture}>Loading...</div>}
+                loading={() => <div className={classes.clientTalentSearchResultPicture}><CircularProgress className={classes.progress} /></div>}
                 error={
                   () => <img src={require('images/missing.png')} className={classes.clientTalentSearchResultPicture} />
                 }

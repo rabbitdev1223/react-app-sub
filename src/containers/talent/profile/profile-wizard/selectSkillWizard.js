@@ -60,7 +60,7 @@ class SelectSkillTypeWizard extends Component {
 
   handleClickNextButton = () => {
     const { selectedSkill } = this.state
-    const { auth, talentInfo } = this.props
+    const { auth } = this.props
     console.log('==== selectedSkill: ', selectedSkill)
     let data = {
       talent_skills: [{name: selectedSkill}],

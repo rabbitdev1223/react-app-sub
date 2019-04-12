@@ -22,7 +22,7 @@ class HeadLine extends React.Component  {
   };
 
   getInfoFromProps = (props) => {
-    const { location, profile } = props;
+    const { profile } = props;
     // let profile = (location && location.state && location.state.profile) ? location.state.profile : null;
     let headLine = '';
     let bio = '';
@@ -70,7 +70,7 @@ class HeadLine extends React.Component  {
 
   renderContent() {
     const { classes } = this.props;
-    const { headLine, bio, isChanged, profile } = this.state;
+    const { headLine, bio, isChanged } = this.state;
 
     return (
       <Panel>

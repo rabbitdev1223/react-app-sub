@@ -219,6 +219,12 @@ const clientRoutes = [
     exact: true
   },
   {
+    path: "/client/mycallback",
+    layout: TemplateClientTopbar,
+    component: MyCallback,
+    exact: true
+  },
+  {
     path: "/client/callback/confirm",
     layout: TemplateClientTopbar,
     component: CallBackConfirm,

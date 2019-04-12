@@ -104,7 +104,7 @@ class VocalistIntroMainForm extends Component {
 
         <Grid container spacing={16} direction="column" justify="center" alignItems="center">
           <Grid item lg={7} md={7} sm={7} xs={10} className={classes.talentProfileGuideButtonItem} >
-            <ImportantRegardingButton formTitle={this.props.formTitle} />
+            <ImportantRegardingButton formTitle={formTitle} />
           </Grid>
         </Grid>
       </Panel>

@@ -3,8 +3,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import {
-  makeTitleWithAllPositionTypes, existSkill, makeHeight, makeWeight, makeLanguages,
-  getPracticVideoNumbers, getLiveVideoNumbers, checkPreviousShipMedical, checkCPR
+  makeHeight, makeWeight, makeLanguages,
+  checkPreviousShipMedical, checkCPR
 } from 'utils/appUtils';
 import styles from 'styles';
 
@@ -30,7 +30,7 @@ class TalentGeneralInfo extends Component {
   render() {
     const {
       nationality, citizenship, have_green_card, height, weight,
-      bmi, age_range, talent_visas, talent_languages, talent_medicals, worked_cruise_ship,
+      bmi, age_range, talent_visas, talent_languages, talent_medicals,
     } = this.props.talent;
 
     return (

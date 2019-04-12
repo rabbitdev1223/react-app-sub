@@ -1,12 +1,10 @@
-import React, {Component} from 'react'
-import classNames from 'classnames';
+import React, {Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import { adminStyles } from 'styles';
 
@@ -22,7 +20,7 @@ class QuestionSelection extends Component {
 
   onChange = event => {
     this.setState({ selectedQuestionId: event.target.value }, () => {
-      if (this.props.onChange) this.props.onChange(parseInt(this.state.selectedQuestionId));
+      if (this.props.onChange) this.props.onChange(parseInt(this.state.selectedQuestionId, 10));
     });
   };
 

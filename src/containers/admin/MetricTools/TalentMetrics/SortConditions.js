@@ -1,12 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import withStyles from "@material-ui/core/styles/withStyles";
-import Grid from '@material-ui/core/Grid';
-import FormLabel from '@material-ui/core/FormLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import Checkbox from '@material-ui/core/Checkbox';
 import defaultValues from 'constants/defaultValues';
 import { adminStyles } from 'styles';

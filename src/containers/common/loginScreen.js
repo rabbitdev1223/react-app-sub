@@ -3,8 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import {
-  Row,
-  Col,
   Form,
   Alert,
 } from 'reactstrap';
@@ -19,7 +17,6 @@ import { Link } from 'react-router-dom';
 import { login } from 'actions/auth';
 import { authErrors, isAuthenticated } from 'reducers/index';
 import { withStyles } from '@material-ui/core/styles';
-import apiConfig from 'constants/api';
 import './loginScreen.css'
 
 const styles = {

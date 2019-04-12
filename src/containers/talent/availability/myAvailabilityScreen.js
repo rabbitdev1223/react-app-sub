@@ -13,7 +13,6 @@ import Paper from '@material-ui/core/Paper';
 import SwipeableViews from 'react-swipeable-views';
 import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
-import Spacer from "components/general/spacer";
 import ConfirmChangesDialog from 'components/shiptalent/dialogs/confirmChangesDialog';
 import { DateRange } from 'react-date-range';
 import moment from 'moment';
@@ -24,8 +23,8 @@ import MultiRangeCalendar from 'components/shiptalent/calendars/multiRangeCalend
 import { styles } from 'styles';
 
 const FIRST_YEAR = (new Date().getFullYear()).toString()
-const SECOND_YEAR = (parseInt(FIRST_YEAR) + 1).toString()
-const THIRD_YEAR = (parseInt(FIRST_YEAR) + 2).toString()
+const SECOND_YEAR = (parseInt(FIRST_YEAR, 10) + 1, 10).toString()
+const THIRD_YEAR = (parseInt(FIRST_YEAR, 10) + 2, 10).toString()
 const YEARS = [ FIRST_YEAR, SECOND_YEAR, THIRD_YEAR ]
 
 function TabContainer({ children, dir }) {
@@ -83,7 +82,7 @@ class MyAvailability extends Component {
       let availability = availabilities[i];
       let start_year = moment(availability.start_date).format('YYYY');
       let start_month = moment(availability.start_date).format('M');
-      if (start_year === year && parseInt(start_month) === month ) {
+      if (start_year === year && parseInt(start_month, 10) === month ) {
         res.push(availability);
       }
     }
@@ -98,7 +97,7 @@ class MyAvailability extends Component {
       [THIRD_YEAR]: []
     }
 
-    Object.keys(res).map(key => {
+    let result = Object.keys(res).map(key => {
       for (let i = 0; i < 12; i ++) {
         res[key].push({
           startDate: new Date(`${key}-${i + 1}-1`),
@@ -107,6 +106,7 @@ class MyAvailability extends Component {
         })
       }
     })
+    result = null
 
     return res
   }
@@ -115,15 +115,16 @@ class MyAvailability extends Component {
   convertAvailabilities2SelectionRange(availabilities) {
     let selectionRange = this.initializeSelectionRange()
 
-    Object.keys(availabilities).map(key => {
+    let res = Object.keys(availabilities).map(key => {
       for (let i = 0; i < availabilities[key].length; i++) {
         let availability = availabilities[key][i]
         let year = moment(availability.start_date).format('YYYY')
-        let month = parseInt(moment(availability.start_date).format('M')) - 1
+        let month = parseInt(moment(availability.start_date).format('M'), 10) - 1
         selectionRange[year][month].startDate = new Date(availability.start_date)
         selectionRange[year][month].endDate = new Date(availability.end_date)
       }
     });
+    res = null
 
     return selectionRange
   }
@@ -142,8 +143,10 @@ class MyAvailability extends Component {
         }
         return ''
       })
+      result = null
       return ''
     })
+    result = null
 
     return res
   }
@@ -307,8 +310,8 @@ class MyAvailability extends Component {
           {
             Object.keys(selectionRange[year]).map(key => {
               let monthRange = selectionRange[year][key]
-              let minDate = new Date(`${year}-${parseInt(key) + 1}-1`)
-              let maxDate = new Date(`${year}-${parseInt(key) + 1}-${31}`)
+              let minDate = new Date(`${year}-${parseInt(key, 10) + 1}-1`)
+              let maxDate = new Date(`${year}-${parseInt(key, 10) + 1}-${31}`)
               let ranges = monthRange.startDate ? [monthRange] : []
 
               return (
@@ -447,7 +450,6 @@ class MyAvailability extends Component {
 
 
   render() {
-    const { classes } = this.props;
     const { showConfirmChanges } = this.state;
 
     return (

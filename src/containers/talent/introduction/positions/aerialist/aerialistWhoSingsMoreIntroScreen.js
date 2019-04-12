@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import TalentBuildProfileForm from 'components/shiptalent/forms/talentBuildProfileForm';
-import AerialistWhoSingsMoreIntroForm from './aerialistWhoSingsIntroForm';
 import VocalistAerialistWhoSingsIntroForm from '../vocalist/vocalistActorWhoSingsIntroForm'
 
 class AerialistWhoSingsMoreIntro extends Component {

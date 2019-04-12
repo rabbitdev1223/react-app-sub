@@ -1,8 +1,7 @@
 import { RSAA } from 'redux-api-middleware';
 import apiConfig from '../constants/api';
 import * as types from './actionTypes'
-import { getToken, getUserID } from "../service/storage";
-import { processRequest } from "../service/api";
+import { getToken } from "../service/storage";
 
 export const getSignedUrl = (url, params) => ({
   [RSAA]: {

@@ -1,19 +1,9 @@
 import React from "react";
-// @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-// @material-ui/icons
-import Close from "@material-ui/icons/Close";
-import Check from "@material-ui/icons/Check";
-// core components
 import Grid from '@material-ui/core/Grid';
-import GridItem from  "components/admin/Grid/GridItem.jsx";
-import GridContainer from  "components/admin/Grid/GridContainer.jsx";
-import Danger from  "components/admin/Typography/Danger.jsx";
-import Success from  "components/admin/Typography/Success.jsx";
 import Button from '@material-ui/core/Button';
 import Card from  "components/admin/Card/Card.jsx";
-import CardHeader from  "components/admin/Card/CardHeader.jsx";
-import CardBody from  "components/admin/Card/CardBody.jsx";
+import CardBody from "components/admin/Card/CardBody.jsx";
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -88,7 +78,7 @@ const styles = {
   }
 };
 
-function UpgradeToPro(props) {
+function MedicalDisclosure(props) {
   const { classes } = props;
   return (
      <Card>
@@ -137,4 +127,4 @@ function UpgradeToPro(props) {
   );
 }
 
-export default withStyles(styles)(UpgradeToPro);
+export default withStyles(styles)(MedicalDisclosure);

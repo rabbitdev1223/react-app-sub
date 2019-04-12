@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,20 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import * as videoActions from 'actions/videoActions';
 import * as talentActions from 'actions/talentActions';
 import styles from 'styles';
-
-const title = {
-  "cruise": "Cruise Staff",
-  "audio": "Audio Technician",
-  "light-technician": "Lighting Technician",
-  "vocalist": "Vocalist",
-  "dancer": "Dancer",
-  "actor": "Actor",
-  "aerialist": "Aerialist",
-  "solo-musician": "Solo Musician",
-  "music-group-leader": "Musical Group Leader",
-  "video-technician": "Video Technician",
-  "youth-staff": "Youth Staff"
-}
 
 
 class InterviewInstructionLive extends React.Component {
@@ -69,7 +54,7 @@ class InterviewInstructionLive extends React.Component {
 
   render() {
     const { videoQuestions, classes } = this.props;
-    const { positionType, subPositionType } = this.state;
+    const { positionType } = this.state;
     let positionName = positionType ? positionType.position_type : '';
 
     return (

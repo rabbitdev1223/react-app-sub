@@ -50,7 +50,7 @@ let VideoResolutions = [
   {width: 160, height:120}
 ];
 
-let MAX_RESOLUTION = {width: 1280, height: 768};
+// let MAX_RESOLUTION = {width: 1280, height: 768};
 const theme = createMuiTheme ({
   palette: {
     primary: {
@@ -238,7 +238,7 @@ class LiveInterview extends React.Component {
               remainingTime: newRemaining
             });
           }
-          if (__this.timer && __this.timer != -1) {
+          if (__this.timer && __this.timer !== -1) {
             clearTimeout(__this.timer);
             __this.timer = -1;
           }
@@ -293,7 +293,7 @@ class LiveInterview extends React.Component {
         remainingTime: remainingTime
       },
       () => {
-        if (this.timer && this.timer != -1) {
+        if (this.timer && this.timer !== -1) {
           clearTimeout(this.timer);
           this.timer = -1;
         }
@@ -382,7 +382,7 @@ class LiveInterview extends React.Component {
       isPlaying: false,
       timePos: 0
     }, function() {
-      if (__this.timer && __this.timer != -1) {
+      if (__this.timer && __this.timer !== -1) {
         clearTimeout(__this.timer);
         __this.timer = -1;
       }
@@ -401,7 +401,7 @@ class LiveInterview extends React.Component {
       isPlaying: false,
       timePos: 0
     }, () => {
-      if (__this.timer && __this.timer != -1) {
+      if (__this.timer && __this.timer !== -1) {
         clearTimeout(__this.timer);
         __this.timer = -1;
       }

@@ -17,14 +17,6 @@ class IntroductionForm extends Component {
     }
   }
 
-  getInfoFromProps(props) {
-    const {talentInfo} = props
-
-  }
-  componentWillMount() {
-
-  }
-
   renderContents() {
     const { classes, contentTitle } = this.props
     let landscapeOrientationLink = {

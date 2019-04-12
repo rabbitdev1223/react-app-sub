@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Panel from 'components/general/panel';
 import DancerIntroCommon from './dancerIntroCommon';
 import styles from 'styles';
@@ -12,10 +10,10 @@ class DancerWhoActsIntroForm extends Component {
 
   renderAdditional() {
     const { classes } = this.props;
-    let link = {
-      pathname: '/talent/video-audition/vocalist-dancer-acts-intro',
-      state: {previousFormTitle: this.props.formTitle}
-    }
+    // let link = {
+    //   pathname: '/talent/video-audition/vocalist-dancer-acts-intro',
+    //   state: {previousFormTitle: this.props.formTitle}
+    // }
 
     return (
       <div>

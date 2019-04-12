@@ -1,10 +1,9 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Spacer from 'components/general/spacer';
 import Panel from 'components/general/panel';
 import ClientForm from 'components/shiptalent/forms/clientForm';
@@ -12,7 +11,6 @@ import TalentPictures from 'components/shiptalent/views/TalentPictures';
 import TalentResume from 'components/shiptalent/views/TalentResume';
 import TalentBio from 'components/shiptalent/views/TalentBio';
 import TalentGeneralInfo from 'components/shiptalent/views/TalentGeneralInfo';
-import TalentHeader from 'components/shiptalent/views/TalentHeader';
 import ClientTalentMarkWithStar from 'components/shiptalent/forms/clientTalentMarkWithStar';
 import MoreActions from './MoreActions';
 import DetailButtonsGroup from './DetailButtonsGroup';
@@ -62,7 +60,6 @@ class TalentView extends React.Component {
   };
 
   componentWillReceiveProps = (nextProps) => {
-    const locationState = nextProps.location.state;
     const { talent, allPositionTypes, allSkills } = nextProps;
 
     if (talent || allPositionTypes || allSkills) {

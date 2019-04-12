@@ -57,8 +57,7 @@ class ClientRating extends Component {
   };
 
   renderContent() {
-    const { classes } = this.props;
-    const { talent, rating } = this.state;
+    const { rating } = this.state;
 
     return (
       <Panel>

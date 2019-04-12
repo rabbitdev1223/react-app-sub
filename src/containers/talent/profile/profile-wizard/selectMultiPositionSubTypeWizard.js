@@ -99,7 +99,6 @@ class SelectMultiPositionSubTypeWizard extends Component {
 
   handleNextResponse = (response, isFailed) => {
     console.log('==== response: ', response, isFailed)
-    const { auth } = this.props
     // this.props.talentActions.getCurrentTalentInfo(auth.user_id)
   }
 
@@ -151,7 +150,7 @@ class SelectMultiPositionSubTypeWizard extends Component {
 
 
   renderContents() {
-    const { multiSelectedPositionSubType, prevPositionType } = this.state;
+    const { prevPositionType } = this.state;
     const { classes } = this.props;
 
     return (

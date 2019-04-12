@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import ImageLoader from 'react-loading-image';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import { connect } from 'react-redux';
@@ -88,8 +87,6 @@ class MyAuditionsForm extends Component {
   };
 
   render() {
-    const { classes } = this.props;
-
     return (
       <Panel>
         <Grid container spacing={16} direction="column" justify="center" alignItems="center">

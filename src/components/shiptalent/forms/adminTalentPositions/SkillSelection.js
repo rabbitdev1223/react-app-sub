@@ -8,7 +8,7 @@ import { adminStyles } from 'styles';
 class SkillSelection extends Component {
 
   render() {
-    const {classes, skill, selectedSubSkills, titleItem, selected } = this.props;
+    const { skill, selectedSubSkills, titleItem, selected } = this.props;
 
     return(
       <div style={{display: 'block'}}>

@@ -138,7 +138,7 @@ class SelectSubSkillWizard extends Component {
 
 
   renderContents() {
-    const { singleSelectedSubSkill, prevSkill } = this.state;
+    const { prevSkill } = this.state;
     const { classes } = this.props;
 
     return (

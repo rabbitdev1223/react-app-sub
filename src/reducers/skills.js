@@ -38,12 +38,3 @@ export function getAllSkills(state = initialState, action) {
       return state;
   }
 }
-
-
-const initialSkillsState = {
-  init: true,
-  isFetched: false,
-  errorMessage: false,
-  isFailure: false,
-  value: null
-};

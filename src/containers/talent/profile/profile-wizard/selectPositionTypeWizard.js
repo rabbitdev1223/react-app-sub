@@ -11,7 +11,7 @@ import WizardSettingHeader from 'components/shiptalent/headers/wizardSettingHead
 import TalentForm from 'components/shiptalent/forms/talentForm';
 import * as talentActions from 'actions/talentActions';
 import TalentAPI from 'apis/talentAPIs';
-import { getPrefixByWord, findPositionTypeByName, filterWizardQuestionScenarioByPositionName } from 'utils/appUtils';
+import { findPositionTypeByName, filterWizardQuestionScenarioByPositionName } from 'utils/appUtils';
 import styles from 'styles';
 
 class SelectPositionTypeWizard extends Component {
@@ -167,7 +167,7 @@ class SelectPositionTypeWizard extends Component {
   }
 
   render() {
-    const { talentInfo, allPositionTypes, wizardQuestionScenario } = this.props
+    const { talentInfo, allPositionTypes } = this.props
     const { selectedPositionType, positionWizardQuestions } = this.state
     let prevPositionType = {}
     let nextLink = "/profile-wizard/select-position-sub-type"

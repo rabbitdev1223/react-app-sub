@@ -44,25 +44,25 @@ class ProfileStatusButtons extends Component {
           <ProfileStatusButton link="#" requireApproval={false} title="Contracts" />
         </Grid>
         <Grid item xs={4} >
-          <ProfileStatusButton link="#" requireApproval={true} title="Medical" />
+          <ProfileStatusButton link="/admin/edit-profiles/medicals" requireApproval={true} title="Medical" />
         </Grid>
         <Grid item xs={4} >
           <ProfileStatusButton link="/admin/edit-profiles/profile-credentials" requireApproval={false} title="Credentials" />
         </Grid>
         <Grid item xs={4} >
-          <ProfileStatusButton link="#" requireApproval={true} title="Personal Info" />
+          <ProfileStatusButton link="/admin/edit-profiles/personal-information" requireApproval={true} title="Personal Info" />
         </Grid>
         <Grid item xs={4} >
-          <ProfileStatusButton link="#" requireApproval={true} title="Immigration" />
+          <ProfileStatusButton link="/admin/edit-profiles/immigration" requireApproval={true} title="Immigration" />
         </Grid>
         <Grid item xs={4} >
-          <ProfileStatusButton link="#" requireApproval={true} title="Languages" />
+          <ProfileStatusButton link="/admin/edit-profiles/languages" requireApproval={true} title="Languages" />
         </Grid>
         <Grid item xs={4} >
           <ProfileStatusButton link="#" requireApproval={false} title="Finance" />
         </Grid>
         <Grid item xs={4} >
-          <ProfileStatusButton link="#" requireApproval={false} title="Calendar" />
+          <ProfileStatusButton link="/admin/edit-profiles/calendar" requireApproval={false} title="Calendar" />
         </Grid>
       </Grid>  
 

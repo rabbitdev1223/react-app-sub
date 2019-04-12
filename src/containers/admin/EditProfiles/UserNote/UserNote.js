@@ -48,7 +48,7 @@ class UserNote extends React.Component  {
           receiver: userIds[j],
           object_id: objectId,
           note_type: noteType,
-          note: note
+          note: note,
         };
         AdminAPI.addNote(data, this.handleAddNoteResponse);
       }
@@ -68,7 +68,7 @@ class UserNote extends React.Component  {
   handleClickAddButton = () => this.setState({showAddDialog: true});
 
   render() {
-    const { enableAdd, classes } = this.props;
+    const { enableAdd, title, classes } = this.props;
     const { notes, showAddDialog } = this.state;
     let strNotes = '';
     
@@ -80,21 +80,27 @@ class UserNote extends React.Component  {
 
     return (
       <Grid container spacing={0} justify="flex-start" alignItems="flex-start">
-        { enableAdd && 
-          <Grid item xs={12}>
-            <Button variant="contained" size="small" className={classNames(classes.button, classes.adminAddNoteButton)}
+        
+        <Grid item xs={12}>
+          { title && (
+            <Typography className={classNames(classes.adminNoteTitle, classes.inlineText)}>
+              {title}
+            </Typography>
+          )}
+          { enableAdd && 
+            <Button variant="contained" size="small" className={classNames(classes.button, classes.adminAddNoteButton, classes.inlineText)}
               onClick={this.handleClickAddButton}
             >
               <Typography className={classes.adminAddNoteButtonTitle}>
                 Add Note
               </Typography>
             </Button>
-          </Grid>
-        }
+          }
+        </Grid>
+        
         <Grid item xs={12}>
           <TextField
             id="outlined-bare"
-            className={classes.textField}
             margin="normal"
             variant="outlined"
             rows={8}

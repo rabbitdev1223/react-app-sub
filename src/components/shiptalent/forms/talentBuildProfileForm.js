@@ -4,7 +4,6 @@ import { withStyles } from '@material-ui/core/styles';
 import { bindActionCreators } from 'redux';
 import TalentForm from 'components/shiptalent/forms/talentForm';
 import * as talentActions from 'actions/talentActions';
-import TalentAPI from 'apis/talentAPIs'
 import ConfirmChangesDialog from 'components/shiptalent/dialogs/confirmChangesDialog';
 import { styles } from 'styles';
 
@@ -80,7 +79,7 @@ class TalentBuildProfileForm extends Component {
     const {
       formTitle, formSubTitle,
       backLink, backButtonTitle, handleClickBackButton,
-      nextLink, nextButtonTitle, handleClickNextButton
+      nextLink, nextButtonTitle
     } = this.props
     const { showConfirmChanges } = this.state
 

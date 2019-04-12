@@ -8,8 +8,6 @@ import Button from '@material-ui/core/Button';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Spacer from 'components/general/spacer';
 import {
-  getPracticVideoNumbers,
-  getLiveVideoNumbers,
   getSubSkillVideoNumbersByPositionType
 } from 'utils/appUtils';
 import styles from 'styles';

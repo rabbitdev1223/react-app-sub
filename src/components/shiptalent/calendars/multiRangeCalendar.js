@@ -1,10 +1,7 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import ClearIcon from '@material-ui/icons/Clear';
 import ClearRounded from '@material-ui/icons/ClearRounded';
 import { DateRange } from 'react-date-range';
 import 'react-date-range/dist/styles.css';
@@ -90,16 +87,16 @@ class MultiRangeCalendar extends Component {
 
   getInfoFromProps(props) {
     const { year, month, ranges, disabled } = props;
-    const minDate = new Date(parseInt(year), parseInt(month) - 1, 1);
-    const maxDate = new Date(parseInt(year), parseInt(month), 0);
+    const minDate = new Date(parseInt(year, 10), parseInt(month, 10) - 1, 1);
+    const maxDate = new Date(parseInt(year, 10), parseInt(month, 10), 0);
     const defaultFocusRangeKey = `selection-${year}-${month}-focus`;
     const newRanges = this.convertStr2Date(ranges, year, month, defaultFocusRangeKey, minDate);
 
     return {
       year,
       month,
-      minDate: minDate ? minDate : new Date(`${year}-${parseInt(month)}-${1} 09:00 EST`),
-      maxDate: maxDate ? maxDate : new Date(`${year}-${parseInt(month)}-${31} 18:00 EST`),
+      minDate: minDate ? minDate : new Date(`${year}-${parseInt(month, 10)}-${1} 09:00 EST`),
+      maxDate: maxDate ? maxDate : new Date(`${year}-${parseInt(month, 10)}-${31} 18:00 EST`),
       ranges: newRanges,
       selections: newRanges.length - 1,
       defaultFocusRangeKey,

@@ -4,7 +4,6 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Panel from 'components/general/panel';
 import ClientForm from 'components/shiptalent/forms/clientForm';
-import Spacer from 'components/general/spacer';
 import styles from 'styles';
 
 

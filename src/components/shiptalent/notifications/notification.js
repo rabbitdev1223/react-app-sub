@@ -125,7 +125,6 @@ class Notifications extends React.Component {
   };
 
   render() {
-    const {classes} = this.props;
     const { open, type, message } = this.state;
 
     return (

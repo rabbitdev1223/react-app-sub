@@ -54,6 +54,15 @@ export default {
 	DEFAULT_PRACTICE_POSITION_TYPE: 'Staff', //'Practice',
 	DEFAULT_TECHNICIAN_POSITION_TYPE: 'Techincian',
 	GENDERS: ["Male", "Female"],
+	EMERGENCY_CONTACT_TYPES: [
+		"Wife",
+    "Husband",
+    "Father",
+    "Mother",
+    "Brother",
+    "Sister",
+    "Other"
+	],
 	VISA_TYPES: [
 		'B-1',
 		'B-2',

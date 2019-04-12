@@ -1,5 +1,4 @@
-import React, {Component} from 'react'
-import { Link } from 'react-router-dom';
+import React, {Component} from 'react';
 import { withRouter } from 'react-router'
 import { connect } from 'react-redux';
 import {bindActionCreators} from "redux";
@@ -20,12 +19,11 @@ class ProfileItem extends Component {
   onClick = () => {
     const { profile, link } = this.props;
     this.props.talentActions.getTalentInfo(profile.id);
-    console.log('===== props: ', this.props)
     this.props.history.push(link.pathname, link.state);
   };
 
   render() {
-    const { profile, link, className, classes } = this.props;
+    const { profile, className, classes } = this.props;
     let defaultClassName = className ? className : classes.adminTalentViewButton;
 
     if (profile) {

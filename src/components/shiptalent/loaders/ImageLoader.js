@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import ImageLoader from 'react-loading-image';
 import ImageLightbox from 'react-image-lightbox';

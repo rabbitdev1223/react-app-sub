@@ -9,7 +9,7 @@ import TableCell from "@material-ui/core/TableCell";
 import tableStyle from "assets/jss/material-dashboard-react/components/tableStyle.jsx";
 
 function CustomTable({ ...props }) {
-  const { classes, tableHead, tableData, tableHeaderColor, isLoading } = props;
+  const { classes, tableHead, tableData, tableHeaderColor} = props;
 
   return (
     <div className={classes.tableResponsive}>

@@ -107,7 +107,6 @@ class TalentFinanceForm extends Component {
   }
 
   renderInvoiceHeader() {
-    const { classes } = this.props;
     let headers = [];
 
     headers.push(this.renderInvoiceHeaderItem('INV DATE'));
@@ -134,8 +133,6 @@ class TalentFinanceForm extends Component {
   }
 
   renderFinanceTable(financeData) {
-    const { classes } = this.props;
-
     return (
       <Grid container spacing={8} justify="flex-start" alignItems="flex-start" style={{boder: '2px solid'}}>
         <Grid item lg={12} md={12} sm={12} xs={12}>

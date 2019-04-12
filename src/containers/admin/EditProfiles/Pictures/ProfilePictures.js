@@ -7,7 +7,6 @@ import AdminForm from 'components/shiptalent/forms/adminForm';
 import ProfilePicture from './ProfilePicture';
 import Spacer from 'components/general/spacer';
 import { getPictureByCaption } from 'utils/appUtils';
-import AdminAPI from 'apis/adminAPIs';
 import { adminStyles } from 'styles';
 
 
@@ -19,7 +18,7 @@ class ProfilePcitures extends React.Component  {
   };
 
   getInfoFromProps = (props) => {
-    const { profile, location } = props;
+    const { profile } = props;
     let pictures = null;
     if (profile) {
       pictures = profile.talent_pictures;

@@ -1,6 +1,5 @@
 import {
   TemplateNothing,
-  TemplateSidebar,
   TemplateTopbar,
   TemplateTopbarOfComingSoon,
 } from 'components/shiptalent/template';

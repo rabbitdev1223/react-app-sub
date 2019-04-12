@@ -149,13 +149,13 @@ class TalentPositionVideosForm extends Component {
       pathname: position ? position.introduction_link : '#',
       state: { position: position }
     };
-    let landscapeOrientationLink = {
-      pathname: '/talent/video-audition/landscape-orientation',
-      state: {
-        position: null,
-        previousFormTitle: this.props.formTitle
-      }
-    };
+    // let landscapeOrientationLink = {
+    //   pathname: '/talent/video-audition/landscape-orientation',
+    //   state: {
+    //     position: null,
+    //     previousFormTitle: this.props.formTitle
+    //   }
+    // };
 
     return (
       <Panel title={contentTitle}>

@@ -9,9 +9,8 @@ import AdminForm from 'components/shiptalent/forms/adminForm';
 import CastingRequestTable from './CastingRequestTable';
 import Spacer from 'components/general/spacer';
 import AdminAPI from 'apis/adminAPIs';
-import deefaultValues from 'constants/defaultValues';
 import { adminStyles } from 'styles';
-import defaultValues from "../../../../constants/defaultValues";
+import defaultValues from "constants/defaultValues";
 
 
 class Ratings extends React.Component  {
