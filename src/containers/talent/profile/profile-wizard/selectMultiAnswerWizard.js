@@ -12,7 +12,6 @@ import Spacer from 'components/general/spacer';
 import * as talentActions from 'actions/talentActions';
 import TalentAPI from 'apis/talentAPIs';
 import {
-  findPositionTypeByName,
   filterWizardQuestionScenarioByPosition,
   findAnswer
 } from 'utils/appUtils';
@@ -39,8 +38,7 @@ class SelectMultiAnswerWizard extends Component {
   }
 
   getInfoFromProps(props) {
-    const { 
-      talentInfo,
+    const {
       wizardQuestionScenario,
     } = props
 
@@ -145,7 +143,7 @@ class SelectMultiAnswerWizard extends Component {
   }
 
   handleClickNextButton = () => {
-    const { selectedAnswer, multiSelectedAnswers, positionType } = this.state
+    const { multiSelectedAnswers, positionType } = this.state
     let data = {}
     let sub_skills = []
     let position_sub_types = []
@@ -199,20 +197,13 @@ class SelectMultiAnswerWizard extends Component {
 
   handleNextResponse = (response, isFailed) => {
     console.log('==== response: ', response, isFailed)
-    const { auth } = this.props
     // this.props.talentActions.getCurrentTalentInfo(auth.user_id)
   }
 
   renderAnswerButtons() {
     const { 
-      multiSelectedAnswers, 
-      prevAnswer, 
-      positionWizardQuestions,
-      positionType,
+      multiSelectedAnswers,
       currentScenarioStep,
-      currentIndex,
-      isFirst,
-      isLast 
     } = this.state;
     const { classes } = this.props;
     let items = []
@@ -263,7 +254,7 @@ class SelectMultiAnswerWizard extends Component {
   }
 
   renderContents() {
-    const { multiSelectedAnswers, prevAnswer, currentScenarioStep } = this.state;
+    const { currentScenarioStep } = this.state;
     const { classes } = this.props;
     let wizard_question = ''
     let questionTitle = ''

@@ -65,7 +65,7 @@ class LogsAndLockouts extends React.Component  {
   }
 
   renderContent() {
-    const { profile, classes } = this.props;
+    const { classes } = this.props;
     const { userIds, noteTypes } = this.state;
 
     return (
@@ -113,7 +113,7 @@ class LogsAndLockouts extends React.Component  {
 
 
 const mapStateToProps = state => {
-  const { talentInfo, notes } = state;
+  const { talentInfo } = state;
   return {
     profile: talentInfo.value
   };

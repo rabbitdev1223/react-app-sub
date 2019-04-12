@@ -56,8 +56,8 @@ class CastingRequestAddWageForm extends Component {
     const { castingRequestTalent, rehearsalWage, performanceWage, comment } = this.state;
     let data = {...castingRequestTalent};
 
-    data.rehearsal_wage = parseInt(rehearsalWage);
-    data.performance_wage = parseInt(performanceWage);
+    data.rehearsal_wage = parseInt(rehearsalWage, 10);
+    data.performance_wage = parseInt(performanceWage, 10);
     data.comment = comment;
 
     event.preventDefault();
@@ -75,7 +75,7 @@ class CastingRequestAddWageForm extends Component {
   };
 
   handleClickCancel = (event) => {
-    const { castingRequestTalent, rehearsalWage, performanceWage, comment } = this.state;
+    const { castingRequestTalent } = this.state;
 
     event.preventDefault();
 
@@ -165,7 +165,6 @@ class CastingRequestAddWageForm extends Component {
   };
 
   render() {
-    const { title, classes } = this.props;
     const { castingRequestTalent } = this.state;
 
     let backLink = {

@@ -18,7 +18,7 @@ import VideoUploader from 'components/shiptalent/uploaders/videoUploader';
 import HelpfulHintForm from 'components/shiptalent/forms/helpfulHintForm';
 import TalentAPI from 'apis/talentAPIs';
 import apiConfig from 'constants/api';
-import { findVideoByPriority, findVideoIndexByPriority } from 'utils/appUtils';
+import { findVideoByPriority } from 'utils/appUtils';
 
 
 class AuditionVideoType2Form extends Component {
@@ -199,7 +199,6 @@ class AuditionVideoType2Form extends Component {
       talent_video_sub_skills,
       id,
       name,
-      video_counts,
       helpful_hint,
       download_video_link,
       step1_title,
@@ -212,12 +211,6 @@ class AuditionVideoType2Form extends Component {
       step2_link,
       introduction_title,
       introduction_link,
-      opts_in,
-      video_audition_type,
-      is_special_video_audition,
-      is_required_all,
-      is_required,
-      is_video_interview_button,
     } = this.state
     let signApi = ''
     let completeApi = ''
@@ -328,7 +321,7 @@ class AuditionVideoType2Form extends Component {
   }
 
   renderContents() {
-    const { classes, contentTitle, allPositionTypes } = this.props
+    const { classes, contentTitle } = this.props
     const { subSkill, checkedOptOut } = this.state
     let name = subSkill ? subSkill.name : ''
 

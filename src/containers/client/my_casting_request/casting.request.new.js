@@ -3,8 +3,6 @@ import {connect} from "react-redux";
 import DatePicker from 'react-datepicker';
 import moment from 'moment';
 import { Alert } from 'reactstrap';
-import {onCastingViewSearch} from 'actions/clientActions'
-import {bindActionCreators} from "redux";
 import ClientAPI from 'apis/clientAPIs';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -78,7 +76,7 @@ class CastingRequestNew extends Component {
 
   onAddCastingRequest = () => {
     const {
-      request_name, ship_name, employStartDate, employEndDate, joinDate, rehearsalPlace,
+      request_name, ship_name, employStartDate, employEndDate, joinDate,
       rehearsalStartDate, rehearsalEndDate, performanceStartDate, performanceEndDate,
       visa_requirement, comment
     } = this.state;

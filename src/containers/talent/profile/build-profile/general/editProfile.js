@@ -19,7 +19,7 @@ import TalentAPI from 'apis/talentAPIs';
 import defaultValues from 'constants/defaultValues';
 import 'react-dropdown/style.css'
 import './editProfile.css'
-import { styles, theme } from 'styles';
+import { styles } from 'styles';
 
 
 class EditProfile extends Component {

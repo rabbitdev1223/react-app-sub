@@ -12,9 +12,7 @@ import Spacer from 'components/general/spacer';
 import * as talentActions from 'actions/talentActions';
 import TalentAPI from 'apis/talentAPIs';
 import {
-  findPositionTypeByName,
   filterWizardQuestionScenarioByPosition,
-  findAnswer
 } from 'utils/appUtils';
 import styles from 'styles';
 
@@ -40,7 +38,6 @@ class SelectSingleAnswerWizard extends Component {
 
   getInfoFromProps(props) {
     const {
-      talentInfo,
       wizardQuestionScenario,
     } = props
 
@@ -275,7 +272,7 @@ class SelectSingleAnswerWizard extends Component {
   }
 
   renderContents() {
-    const { singleSelectedAnswer, prevAnswer, currentScenarioStep } = this.state;
+    const { currentScenarioStep } = this.state;
     const { classes } = this.props;
     let wizard_question = ''
     let questionTitle = ''

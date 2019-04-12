@@ -1,5 +1,5 @@
 import apiConfig from 'constants/api';
-import { getToken, getUserID } from "service/storage";
+import { getToken } from "service/storage";
 
 class AdminAPI {
   static processResponse(response, handleResponse) {

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ImageLoader from 'react-loading-image';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import Panel from 'components/general/panel';
 import styles from 'styles';

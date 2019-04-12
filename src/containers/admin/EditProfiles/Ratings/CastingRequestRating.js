@@ -36,8 +36,8 @@ class CastRequestRating extends React.Component  {
   componentWillReceiveProps = (nextProps) => this.setState({...this.getInfoFromProps(nextProps)});
 
   renderContent() {
-    const { profile, classes } = this.props;
-    const { castingRequest, rating } = this.state;
+    const { classes } = this.props;
+    const { rating } = this.state;
 
     return (
       <Panel>

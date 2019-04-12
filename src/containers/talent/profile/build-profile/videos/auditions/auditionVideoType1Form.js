@@ -18,7 +18,7 @@ import VideoUploader from 'components/shiptalent/uploaders/videoUploader';
 import HelpfulHintForm from 'components/shiptalent/forms/helpfulHintForm';
 import TalentAPI from 'apis/talentAPIs';
 import apiConfig from 'constants/api';
-import { findVideoByPriority, findVideoIndexByPriority } from 'utils/appUtils';
+import { findVideoByPriority } from 'utils/appUtils';
 
 
 class AuditionVideoType1Form extends Component {
@@ -194,26 +194,12 @@ class AuditionVideoType1Form extends Component {
   };
 
   renderTwoVideos = () => {
-    const { classes, talentInfo } = this.props
+    const { talentInfo } = this.props
     const {
-      subSkill,
       talent_video_sub_skills,
       id,
       name,
-      video_counts,
       helpful_hint,
-      introduction_title,
-      introduction_link,
-      instruction_button_title,
-      instruction_button_link,
-      step1_title,
-      step1_sub_title,
-      step1_button_title,
-      step1_link,
-      step2_title,
-      step2_sub_title,
-      step2_button_title,
-      step2_link,
     } = this.state
     let signApi = ''
     let completeApi = ''
@@ -264,26 +250,12 @@ class AuditionVideoType1Form extends Component {
   }
 
   renderOneVideo = () => {
-    const { classes, talentInfo } = this.props
+    const { talentInfo } = this.props
     const {
-      subSkill,
       talent_video_sub_skills,
       id,
       name,
-      video_counts,
       helpful_hint,
-      introduction_title,
-      introduction_link,
-      instruction_button_title,
-      instruction_button_link,
-      step1_title,
-      step1_sub_title,
-      step1_button_title,
-      step1_link,
-      step2_title,
-      step2_sub_title,
-      step2_button_title,
-      step2_link,
     } = this.state
     let signApi = ''
     let completeApi = ''
@@ -319,26 +291,15 @@ class AuditionVideoType1Form extends Component {
   }
 
   renderVideos() {
-    const { classes, talentInfo } = this.props
+    const { classes } = this.props
     const {
-      subSkill,
-      talent_video_sub_skills,
-      id,
-      name,
       video_counts,
-      helpful_hint,
       introduction_title,
       introduction_link,
-      instruction_button_title,
-      instruction_button_link,
       step1_title,
-      step1_sub_title,
       step1_button_title,
       step1_link,
       step2_title,
-      step2_sub_title,
-      step2_button_title,
-      step2_link,
     } = this.state
 
 
@@ -396,7 +357,7 @@ class AuditionVideoType1Form extends Component {
   }
 
   renderContents() {
-    const { classes, contentTitle, allPositionTypes } = this.props
+    const { classes, contentTitle } = this.props
     const { subSkill, checkedOptOut } = this.state
     let name = subSkill ? subSkill.name : ''
 

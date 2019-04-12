@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -13,9 +12,6 @@ import './welcomeBuildProfileWizard.css';
 
 
 class WelcomeBuildProfileWizard extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   renderContents() {
     const { classes } = this.props;

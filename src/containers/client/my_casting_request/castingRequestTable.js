@@ -83,7 +83,7 @@ class CastingRequestTable extends Component {
   renderCastingRequest = (castingRequest) => {
     const {
       name, client, employment_start_date, employment_end_date,
-      status, status_updated_date, created
+      status, status_updated_date
     } = castingRequest;
     const { hideRequestDate, classes } = this.props;
     const dateFormat = defaultValues.CASTING_REQUEST_DESCRIPTION_DATE_FORMAT;
@@ -98,23 +98,22 @@ class CastingRequestTable extends Component {
       'dates')
     );
 
-    let classNames = classNames(classes.descriptionText, classes.bold);
-    let statusText = status
-    let fieldName = 'status'
+    let valueClassNames = classNames(classes.descriptionText, classes.bold);
+    let statusText = status;
     if(status === 'Draft') {
-      classNames.push(classes.red);
+      valueClassNames = classNames(classes.descriptionText, classes.bold, classes.red);
       statusText = 'Not Yet Submitted';
-      fieldName = 'statusDraft'
+      // fieldName = 'statusDraft';
     } else if (status === 'Requested') {
-      classNames.push(classes.blue)
+      valueClassNames = classNames(classes.descriptionText, classes.bold, classes.blue)
     } else if (status === 'In Progress') {
-      classNames.push(classes.green);
+      valueClassNames = classNames(classes.descriptionText, classes.bold, classes.green);
     }
     items.push (
       this.renderValue(
         statusText,
         hideRequestDate ? 'statusDraft' : 'status',
-        classNames)
+        valueClassNames)
     );
 
     if (!hideRequestDate) {

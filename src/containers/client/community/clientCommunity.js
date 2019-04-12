@@ -12,7 +12,6 @@ import ClientForm from 'components/shiptalent/forms/clientForm';
 import Spacer from 'components/general/spacer';
 import ClientAPI from 'apis/clientAPIs';
 import * as globalNotificationActions from 'actions/globalNotificationActions';
-import {getAvatarFromTalentInfo} from 'utils/appUtils';
 import styles from 'styles';
 
 

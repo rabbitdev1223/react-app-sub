@@ -1,10 +1,6 @@
 /* global window */
 import React from 'react';
 import { Col, Nav } from 'reactstrap';
-import Menu from 'material-ui/Menu';
-import MenuItem from 'material-ui/MenuItem';
-import ActionHome from 'material-ui/svg-icons/action/home';
-import ActionNoteAdd from 'material-ui/svg-icons/action/note-add';
 
 const SidebarNavItems = () => (
   <div>

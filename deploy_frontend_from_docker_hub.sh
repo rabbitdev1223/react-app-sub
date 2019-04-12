@@ -2,8 +2,8 @@
 
 # parameters:
 # docker_repo
-# interval. default 10
-# timeout. default 1800
+# interval. default 10 seconds
+# timeout. default 1200 seconds
 function check_docker_repo () {
     prev_image_state=$(docker images | grep ${1})
     echo ${prev_image_state}
@@ -39,37 +39,16 @@ function check_docker_repo () {
     return 0
 }
 
-function remove_gabage_docker_images {
-docker container prune << EOF
-y
-EOF
-
-docker image prune << EOF
-y
-EOF
-
-docker network prune << EOF
-y
-EOF
-
-docker volume prune << EOF
-y
-EOF
-
-
-    # docker rmi $(docker images -f "dangling=true" -q)
-}
 
 echo "Logining to docker hub..."
 docker login -u $1 -p $2
 echo "Logged in with ${1} user to docker hub..."
 
 echo "Pulling docker image from docker hub..."
-check_docker_repo $3 10 1800
+check_docker_repo $3 10 1200
 
-# if [[ $? == 1 ]]; then
+
 echo "Removing every gabage docker images..."
-# remove_gabage_docker_images
 docker container prune << EOF
 y
 EOF
@@ -86,6 +65,6 @@ docker volume prune << EOF
 y
 EOF
 
-# fi 
+# docker rmi $(docker images -f "dangling=true" -q)
 
 echo "done"

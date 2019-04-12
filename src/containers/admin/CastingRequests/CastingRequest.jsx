@@ -41,10 +41,10 @@ class CastingRequest extends React.Component  {
   getInfoFromCastingRequest = (castingRequest) => {
     let isContracted = false;
     let isRequestCompleted = false;
-    const { DRAFT, REQUESTED, REVIEWING, IN_PROGRESS, ACCEPTED, DECLINED, CANCELED, COMPLETED} = defaultValues.CASTING_REQUEST_STATUS;
+    const { DRAFT, REQUESTED, REVIEWING, DECLINED, CANCELED, COMPLETED} = defaultValues.CASTING_REQUEST_STATUS;
     if (castingRequest) {
       isContracted = (castingRequest.status !== DRAFT) && (castingRequest.status !== REQUESTED) && (castingRequest.status !== REVIEWING)
-      isRequestCompleted = (castingRequest.status === DECLINED) || (castingRequest.status === CANCELED) || (castingRequest.status == COMPLETED)
+      isRequestCompleted = (castingRequest.status === DECLINED) || (castingRequest.status === CANCELED) || (castingRequest.status === COMPLETED)
     }
     return { isContracted, isRequestCompleted };
   };
@@ -148,8 +148,8 @@ class CastingRequest extends React.Component  {
   };
 
   renderContent() {
-    const { profile, classes } = this.props;
-    const { castingRequest, note, isContracted, isRequestCompleted, showActionConfirmDialog, selectedActionName, noteTypes, userIds } = this.state;
+    const { classes } = this.props;
+    const { castingRequest, isContracted, isRequestCompleted, showActionConfirmDialog, selectedActionName, noteTypes, userIds } = this.state;
     let status_updated_date = (castingRequest && castingRequest.status_updated_date) ? moment.tz(castingRequest.status_updated_date).format(defaultValues.ADMIN_EDIT_PROFILE_FORMAT) : '';
     
 

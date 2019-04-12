@@ -6,7 +6,6 @@ import Button from '@material-ui/core/Button';
 import ClientForm from 'components/shiptalent/forms/clientForm';
 import Panel from 'components/general/panel';
 import Spacer from 'components/general/spacer';
-import ClientAPI from 'apis/clientAPIs';
 import styles from 'styles';
 
 
@@ -24,7 +23,7 @@ class BlockedProfileConfirm extends Component {
     const { classes } = this.props;
     if (!this.props.location || !this.props.location.state) return <div/>;
 
-    const { blockedProfile, expiration, talent } = this.props.location.state;
+    const { expiration } = this.props.location.state;
 
     return (
       <Panel title={`Talent will be ${expiration}`} bold={true} center={true} >

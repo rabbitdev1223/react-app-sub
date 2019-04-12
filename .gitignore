@@ -7,3 +7,4 @@ package-lock.json
 logs
 .idea
 # dotenv/.env.development
+yarn.lock

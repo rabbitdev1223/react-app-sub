@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { bindActionCreators } from 'redux';

@@ -45,7 +45,6 @@ class NewProfile extends React.Component {
   }
 
   onClickProfileApproved = () => {
-    const { profileId } = this.state;
     const { profile } = this.props;
     let data = {
       approved: true
@@ -72,7 +71,7 @@ class NewProfile extends React.Component {
   };
 
   renderContent = () => {
-    const { profile, isLoading, classes } = this.props;
+    const { isLoading, classes } = this.props;
     const { openConfirmApproved } = this.state;
 
     return (

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { Row, Col, Alert } from 'reactstrap';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import RaisedButton from 'material-ui/RaisedButton';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
@@ -14,7 +12,6 @@ import Checkbox from '@material-ui/core/Checkbox';
 import moment from 'moment';
 import { CountryDropdown } from 'react-country-region-selector';
 import Panel from 'components/general/panel';
-import ConfirmChangesDialog from 'components/shiptalent/dialogs/confirmChangesDialog';
 import defaultValues from 'constants/defaultValues';
 import 'react-dropdown/style.css';
 import '../contact-info/myContactInfo.css';
@@ -233,7 +230,6 @@ class TalentNationalityForm extends Component {
   }
 
   handleSave = () => {
-    const { talentInfo } = this.props
     const {
       nationality,
       citizenship,

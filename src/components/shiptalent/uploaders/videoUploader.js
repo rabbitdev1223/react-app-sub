@@ -16,7 +16,6 @@ import Typography from '@material-ui/core/Typography';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Alert from 'components/shiptalent/snackbars/alert';
-import TalentAPI from 'apis/talentAPIs';
 import * as talentActions from 'actions/talentActions';
 import 'react-image-lightbox/style.css';
 import styles from 'styles'
@@ -49,7 +48,7 @@ class VideoUploader extends Component {
   }
 
   getInfoFromProps(props) {
-    const { talentInfo, videoData, optionsData } = props
+    const { videoData, optionsData } = props
 
     let video = {}
     let options = null

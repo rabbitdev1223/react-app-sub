@@ -47,7 +47,7 @@ class ClientVideoForm extends Component {
     const {
       formTitle, formSubTitle,
       backLink, backButtonTitle, handleClickBackButton,
-      nextLink, nextButtonTitle, handleClickNextButton,
+      nextLink, nextButtonTitle, 
       talent
     } = this.props
 

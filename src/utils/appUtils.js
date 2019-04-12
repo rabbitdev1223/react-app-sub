@@ -75,9 +75,6 @@ export function convertCm2Feet(cm) {
 
 export function makeHeight(height) {
   const { HEIGHTS } = defaultValues
-  let heightInFeet = 0
-  let heightIntegerInFeet = 0
-  let heightDecimalInInch = 0
   let prefix = ''
   let tmp_height = height
 
@@ -334,7 +331,7 @@ export function getSubSkillVideosByPositionType(talentSubSkillVideos, allSkills,
     const skill = findRelatedSkillByPositionName(allSkills, positionType.name)
 
     if (skill) {
-      const res = talentSubSkillVideos.map((video) => {
+      let res = talentSubSkillVideos.map((video) => {
         const subSkillID = video.sub_skill
 
         let subSkill = skill.sub_skills.find(function(sub_skill) {
@@ -347,6 +344,7 @@ export function getSubSkillVideosByPositionType(talentSubSkillVideos, allSkills,
 
         return subSkill
       })
+      res = []
     }
   }
 
@@ -437,7 +435,7 @@ export function makeRatingSearchConditionTitle(ratingCondition) {
 
   if (start_rating === 0 ) return `<${end_rating}`;
   else if (end_rating === 0 ) return `>${start_rating}`;
-  else return `${start_rating}-${end_rating}`;
+  return `${start_rating}-${end_rating}`;
 }
 
 export function makeHeightSearchConditionTitle(heightCondition) {

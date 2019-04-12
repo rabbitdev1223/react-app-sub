@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
-import StarTwoTon from '@material-ui/icons/StarTwoTone';
 import styles from 'styles';
 
 

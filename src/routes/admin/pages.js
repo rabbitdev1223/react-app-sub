@@ -26,6 +26,11 @@ import Blocks from 'containers/admin/EditProfiles/Blocks/Blocks';
 import Ratings from 'containers/admin/EditProfiles/Ratings/Ratings';
 import CastingRequestRating from 'containers/admin/EditProfiles/Ratings/CastingRequestRating';
 import Credentials from 'containers/admin/EditProfiles/Credentials/Credentials';
+import Medicals from 'containers/admin/EditProfiles/Medicals/Medicals';
+import PersonalInformation from 'containers/admin/EditProfiles/PersonalInformation/PersonalInformation';
+import Immigration from 'containers/admin/EditProfiles/Immigration/Immigration';
+import Languages from 'containers/admin/EditProfiles/Languages/Languages';
+import Calendar from 'containers/admin/EditProfiles/Calendar/Calendar';
 import DashboardPage from "containers/admin/Dashboard/Dashboard.jsx";
 import ProfileSearch from "containers/admin/ProfileSearch/ProfileSearch.jsx";
 import ProfileSearchResults from "containers/admin/ProfileSearch/ProfileSearchResults";
@@ -39,7 +44,7 @@ import ClientLook from "containers/admin/MetricTools/ClientLook.jsx";
 import ClientMainten from "containers/admin/MetricTools/ClientMainten.jsx";
 import AddClient from "containers/admin/MetricTools/AddClient.jsx";
 import NotificationsPage from "containers/admin/Notifications/Notifications.jsx";
-import UpgradeToPro from "containers/admin/UpgradeToPro/UpgradeToPro.jsx";
+import MedicalDisclosure from "containers/admin/MedicalDisclosure/MedicalDisclosure.jsx";
 
 const adminPageRoutes = [
   {
@@ -241,6 +246,36 @@ const adminPageRoutes = [
     exact: true
   },
   {
+    path: "/admin/edit-profiles/medicals",
+    component: Medicals,
+    layout: TemplateAdminSidebar,
+    exact: true
+  },
+  {
+    path: "/admin/edit-profiles/personal-information",
+    component: PersonalInformation,
+    layout: TemplateAdminSidebar,
+    exact: true
+  },
+  {
+    path: "/admin/edit-profiles/immigration",
+    component: Immigration,
+    layout: TemplateAdminSidebar,
+    exact: true
+  },
+  {
+    path: "/admin/edit-profiles/languages",
+    component: Languages,
+    layout: TemplateAdminSidebar,
+    exact: true
+  },
+  {
+    path: "/admin/edit-profiles/calendar",
+    component: Calendar,
+    layout: TemplateAdminSidebar,
+    exact: true
+  },  
+  {
     path: "/admin/profile-search-results",
     component: ProfileSearchResults,
     layout: TemplateAdminSidebar,
@@ -290,7 +325,7 @@ const adminPageRoutes = [
   },
   {
     path: "/admin/medicial-disclosure",
-    component: UpgradeToPro,
+    component: MedicalDisclosure,
     layout: TemplateAdminSidebar,
     exact: true
   }

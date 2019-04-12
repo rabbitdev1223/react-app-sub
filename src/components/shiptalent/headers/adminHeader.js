@@ -158,7 +158,7 @@ class AdminHeader extends Component {
 
   render() {
     const { auth, adminInfo, classes, children } = this.props;
-    const { anchorEl, mobileMoreAnchorEl, open } = this.state;
+    const { anchorEl, open } = this.state;
     const openAnchor = Boolean(anchorEl);
     const loggedIn = (auth && auth.access && auth.access.email);
     let username = "";

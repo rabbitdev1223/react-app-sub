@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import moment from 'moment';
@@ -54,7 +54,7 @@ class CastingRequestView extends React.Component {
 
   componentWillMount() {
     this.setState({ ...this.getInfoFromProps(this.props) }, () => {
-      const { castingRequest, castingRequestTalents, newCastingRequestTalents } = this.state;
+      const { castingRequest, castingRequestTalents } = this.state;
       if (castingRequest && !castingRequestTalents) {
         ClientAPI.getCastingRequestDetail(castingRequest.id, this.handleGetCastingRequestResponse);
       }
@@ -63,7 +63,7 @@ class CastingRequestView extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({ ...this.getInfoFromProps(nextProps) }, () => {
-      const { castingRequest, castingRequestTalents, newCastingRequestTalents } = this.state;
+      const { castingRequest, castingRequestTalents } = this.state;
       if (castingRequest && !castingRequestTalents) {
         console.log('===== view: componentWillReceiveProps: castingRequest: ', castingRequest);
         ClientAPI.getCastingRequestDetail(castingRequest.id, this.handleGetCastingRequestResponse);

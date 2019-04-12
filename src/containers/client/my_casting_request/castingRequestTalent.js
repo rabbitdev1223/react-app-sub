@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import ShipTalentImageLoader from 'components/shiptalent/loaders/ImageLoader';
@@ -57,7 +57,7 @@ class CastingRequestTalent extends React.Component {
 
   renderWage = (castingRequestTalent) => {
     const { classes } = this.props;
-    const { talent, rehearsal_wage, performance_wage, comment } = castingRequestTalent;
+    const { talent, rehearsal_wage, performance_wage } = castingRequestTalent;
 
     if (!rehearsal_wage || !performance_wage) {
       return (

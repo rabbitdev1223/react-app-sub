@@ -3,27 +3,14 @@ import { Row, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import RaisedButton from 'material-ui/RaisedButton';
-import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
 import Panel from 'components/general/panel';
 import Spacer from "components/general/spacer";
 import ColumnButton from 'components/shiptalent/buttons/columnButton';
 import styles from 'styles';
 import './myProfile.css'
 
-const theme = createMuiTheme ({
-  palette: {
-    primary: {
-      main: '#007bff',
-    },
-    secondary: {
-      main: '#C00'
-    }
-  }
-})
 
 class MyProfile extends Component {
 

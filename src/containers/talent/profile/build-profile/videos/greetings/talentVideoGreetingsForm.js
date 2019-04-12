@@ -150,7 +150,7 @@ class TalentVideoGreetingsForm extends Component {
   }
 
   renderVideos() {
-    const { classes, talentInfo } = this.props
+    const { talentInfo } = this.props
     const { selectedLanguage, talent_video_greetings } = this.state
     if (talentInfo) {
       const signApi = `${apiConfig.url}/talent_video_greetings/upload/${talentInfo.user.id}/policy/`
@@ -196,7 +196,7 @@ class TalentVideoGreetingsForm extends Component {
   }
 
   renderContents() {
-    const { classes, contentTitle, allPositionTypes } = this.props
+    const { classes, contentTitle } = this.props
 
     return (
       <Panel title={contentTitle}>

@@ -10,7 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import ColumnButton from 'components/shiptalent/buttons/columnButton';
 import * as clientActions from 'actions/clientActions';
 import { styles } from 'styles';
-import { Row, Col, Jumbotron } from 'reactstrap';
+import { Jumbotron } from 'reactstrap';
 import './client.css';
 import Spacer from "../../components/general/spacer";
 

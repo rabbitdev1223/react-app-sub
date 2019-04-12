@@ -85,8 +85,6 @@ class SelectPositionSubTypeWizard extends Component {
 
   handleNextResponse = (response, isFailed) => {
     console.log('==== response: ', response, isFailed)
-    const { auth } = this.props
-    // this.props.talentActions.getCurrentTalentInfo(auth.user_id)
   }
 
   renderSubPositionButtons() {
@@ -137,7 +135,7 @@ class SelectPositionSubTypeWizard extends Component {
 
 
   renderContents() {
-    const { singleSelectedPositionSubType, prevPositionType } = this.state;
+    const { prevPositionType } = this.state;
     const { classes } = this.props;
     
     return (

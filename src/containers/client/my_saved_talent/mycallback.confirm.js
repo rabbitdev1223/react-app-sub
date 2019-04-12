@@ -23,8 +23,6 @@ class CallBackConfirm extends Component {
     const { classes } = this.props;
     if (!this.props.location || !this.props.location.state) return <div/>;
 
-    const { blockedProfile, expiration, talent } = this.props.location.state;
-
     return (
       <Panel>
         <Grid container spacing={24} direction="column" justify="center" alignItems="center">

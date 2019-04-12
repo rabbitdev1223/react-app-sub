@@ -16,7 +16,7 @@ export const adminStyles = theme => ({
   '@global': {
     body: {
       display: 'flex',
-      backgroundColor: '#e4e5e6',
+      backgroundColor: '#ffffff', //'#e4e5e6'
       position: 'absolute',
       width: '100% !important',
       height: '100% !important',
@@ -25,7 +25,7 @@ export const adminStyles = theme => ({
   },
   root: {
     display: 'flex',
-    backgroundColor: '#e4e5e6',
+    backgroundColor: '#ffffff', //'#e4e5e6'
     position: 'absolute',
     width: '100% !important',
     height: '100% !important',
@@ -132,6 +132,10 @@ export const adminStyles = theme => ({
   },
   progress: {
     margin: theme.spacing.unit * 2,
+  },
+  borderBox: {
+    border: '1px solid black',
+    padding: '5px 15px'
   },
   sectionMobile: {
     display: 'flex',
@@ -1126,7 +1130,32 @@ export const adminStyles = theme => ({
   adminTalentMatricTableNoItemText: {
     color: 'grey', 
     fontStyle: 'italic'
-  }
+  },
+  adminMedicalUploadsContainer: {
+    height: 80,
+    display: 'tableCell',
+    verticalAlign: 'middle'
+  },
+  adminMedicalUploadsContainerEmpty: {
+    height: 80,
+    border: '1px solid black'
+  },
+  adminNoteTitle: {
+    fontSize: '1.15rem',
+    fontWeight: 600,
+    paddingRight: 15,
+    display: 'inline'
+  },
+  adminVisaExpirationText: {
+    paddingLeft: 34
+  },
+  adminDateYearButtonTitle: {
+    fontSize: '1.15rem',
+    fontWeight: 600
+  },
+  adminDateYearButton: {
+    marginRight: 10
+  },
 });
 
 export const themeAdmin = createMuiTheme ({

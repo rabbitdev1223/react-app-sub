@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AdminScreen from '../../../containers/admin/adminScreen';
 import AdminHeader from '../headers/adminHeader';
-import AdminFooter from '../footer/adminFooter';
 import { MuiThemeProvider, } from '@material-ui/core/styles';
 import { themeAdmin } from 'styles';
 

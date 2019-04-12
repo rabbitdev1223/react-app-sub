@@ -6,10 +6,10 @@ import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 import Button from '@material-ui/core/Button';
 import UpdatedTextField from '@material-ui/core/TextField';
-import Paper from '@material-ui/core/Paper';
 import Panel from 'components/general/panel';
 import { withStyles } from '@material-ui/core/styles';
 import moment from 'moment';
+import defaultValues from 'constants/defaultValues';
 import 'react-dropdown/style.css';
 import './myContactInfo.css';
 import { styles } from 'styles';
@@ -417,13 +417,9 @@ class TalentContactInfoForm extends Component {
               onChange={this.handleRelationshipChange}
               menuItemStyle={selectItemStyle}
             >
-              <MenuItem value={1} primaryText="Wife" />
-              <MenuItem value={2} primaryText="Husband" />
-              <MenuItem value={3} primaryText="Father" />
-              <MenuItem value={4} primaryText="Mother" />
-              <MenuItem value={5} primaryText="Brother" />
-              <MenuItem value={6} primaryText="Sister" />
-              <MenuItem value={7} primaryText="Other" />
+              {defaultValues.EMERGENCY_CONTACT_TYPES.map((contactType, index) => {
+                return <MenuItem value={1} primaryText={contactType} key={index} />
+              })}
             </SelectField>
           </Col>
         </Row>

@@ -33,7 +33,6 @@ class GreetingsVideoView extends Component {
   }
 
   renderContent() {
-    const { classes } = this.props;
     const { talent } = this.state;
 
     if (!talent) return <div />;

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import ProfileItem from './ProfileItem';

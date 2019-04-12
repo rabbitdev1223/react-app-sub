@@ -74,9 +74,7 @@ class SelectMultiSubSkillWizard extends Component {
 
   multiSelectedSubSkills2TalentSubSkills(subSkills) {
     let talent_sub_skills = []
-    console.log('===== multiSelectedSubSkillss2TalentSubSkills: subSkills: ', subSkills)
     for (let i = 0; i < subSkills.length; i ++) {
-      let subSkill = subSkills[i]
       talent_sub_skills.push({name: subSkills[i]})
     }
     
@@ -111,7 +109,6 @@ class SelectMultiSubSkillWizard extends Component {
 
   handleNextResponse = (response, isFailed) => {
     console.log('==== response: ', response, isFailed)
-    const { auth } = this.props
     // this.props.talentActions.getCurrentTalentInfo(auth.user_id)
   }
 
@@ -191,7 +188,7 @@ class SelectMultiSubSkillWizard extends Component {
 
 
   renderContents() {
-    const { multiSelectedSubSkills, prevSkill } = this.state;
+    const { prevSkill } = this.state;
     const { classes } = this.props;
 
     return (

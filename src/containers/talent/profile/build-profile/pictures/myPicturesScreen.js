@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import TalentBuildProfileForm from 'components/shiptalent/forms/talentBuildProfileForm';
 import TalentPicturesForm from './talentPicturesForm';
-import TalentAPI from 'apis/talentAPIs'
 
 class MyPictures extends Component {
   render() {

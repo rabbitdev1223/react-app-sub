@@ -55,7 +55,7 @@ let VideoResolutions = [
   {width: 160, height:120}
 ];
 
-let MAX_RESOLUTION = {width: 1280, height: 768};
+// let MAX_RESOLUTION = {width: 1280, height: 768};
 
 // const resolutionSize = {
 //   1: [],
@@ -150,14 +150,13 @@ class VideoPractice extends React.Component {
   componentWillMount() {
     this.detectDevice();
     this.checkAvailableCamera();
-    const { pageId } = this.props.match.params;
     this.props.videoActions.getVideoQuestionsActions('', defaultValues.DEFAULT_PRACTICE_POSITION_TYPE);
     this.props.videoActions.getVideoSettingsActions();
   }
 
   componentDidMount() {
     this.props.talentActions.getCurrentTalentInfo();
-    if (this.timer && this.timer != -1) {
+    if (this.timer && this.timer !== -1) {
       clearTimeout(this.timer);
       this.timer = -1;
     }
@@ -217,11 +216,12 @@ class VideoPractice extends React.Component {
     };
     navigator.mediaDevices.getUserMedia(constraints).then(function(stream) {
       let {width, height} = stream.getTracks()[0].getSettings();
-      VideoResolutions.map((each, key) => {
+      let result = VideoResolutions.map((each, key) => {
         if (each.width === width && each.height === height) {
           __this.setState({ startingResolution: key, maxWidth: width, maxHeight: height });
         }
-      })
+      });
+      result = null;
     }).catch(function(err) {
       console.log(err.name + ': ' + err.message);
     });
@@ -335,7 +335,7 @@ class VideoPractice extends React.Component {
             newRemaining[timePos]= remainingTime[timePos] - 1;
             __this.setState({remainingTime: newRemaining});
           }
-          if (__this.timer && __this.timer != -1) {
+          if (__this.timer && __this.timer !== -1) {
             clearTimeout(__this.timer);
             __this.timer = -1;
           }
@@ -398,7 +398,7 @@ class VideoPractice extends React.Component {
         remainingTime: remainingTime
       },
       () => {
-        if (this.timer && this.timer != -1) {
+        if (this.timer && this.timer !== -1) {
           clearTimeout(this.timer);
           this.timer = -1;
         }
@@ -491,7 +491,7 @@ class VideoPractice extends React.Component {
       isPlaying: false,
       timePos: 0
     }, function() {
-      if (this.timer && this.timer != -1) {
+      if (this.timer && this.timer !== -1) {
         clearTimeout(this.timer);
         this.timer = -1;
       }
@@ -510,7 +510,7 @@ class VideoPractice extends React.Component {
       isPlaying: false,
       timePos: 0
     }, function() {
-      if (this.timer && this.timer != -1) {
+      if (this.timer && this.timer !== -1) {
         clearTimeout(this.timer);
         this.timer = -1;
       }

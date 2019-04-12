@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import ClientVideoViewForm from 'components/shiptalent/forms/clientVideoViewForm';
 import AuditionVideoType0Form from 'containers/client/talent_view/video_views/auditions/auditionVideoType0Form';
-import AuditionVideoType1Form from 'containers/client/talent_view/video_views/auditions/auditionVideoType1Form';
-import AuditionVideoType2Form from 'containers/client/talent_view/video_views/auditions/auditionVideoType2Form';
-import AuditionVideoType3Form from 'containers/client/talent_view/video_views/auditions/auditionVideoType3Form';
 
 class SubSkillVideos extends Component {
   handleClickNextButton = (event) => {

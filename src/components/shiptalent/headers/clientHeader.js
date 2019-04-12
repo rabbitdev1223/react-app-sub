@@ -19,9 +19,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
 import Drawer from '@material-ui/core/Drawer';
 import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import List from '@material-ui/core/List';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
@@ -95,9 +93,7 @@ class ClientHeader extends Component {
   };
 
   getUserAvatarFromProps() {
-    const { clientInfo } = this.props
-
-    return null
+    return {};
   }
 
   renderTopbarMenuItem(title, link) {
@@ -152,7 +148,7 @@ class ClientHeader extends Component {
 
   render() {
     const { auth, clientInfo, classes } = this.props;
-    const { anchorEl, mobileMoreAnchorEl, open } = this.state;
+    const { anchorEl, open } = this.state;
     const openAnchor = Boolean(anchorEl);
     const loggedIn = (auth && auth.access && auth.access.email);
     let username = "";
@@ -168,7 +164,7 @@ class ClientHeader extends Component {
     }
 
     const isMenuOpen = Boolean(anchorEl);
-    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+    // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
     const renderMenu = loggedIn ? (
       <Menu
@@ -193,43 +189,43 @@ class ClientHeader extends Component {
       </Menu>
     );
 
-    const renderMobileMenu = (
-      <Menu
-        anchorEl={mobileMoreAnchorEl}
-        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-        open={isMobileMenuOpen}
-        onClose={this.handleMobileMenuClose}
-      >
+    // const renderMobileMenu = (
+    //   <Menu
+    //     anchorEl={mobileMoreAnchorEl}
+    //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+    //     transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+    //     open={isMobileMenuOpen}
+    //     onClose={this.handleMobileMenuClose}
+    //   >
 
-          {loggedIn ? (
-            <MenuItem onClick={this.handleClickLogin}>
-              <IconButton
-                aria-owns={openAnchor ? 'menu-appbar' : null}
-                aria-haspopup="true"
-                onClick={this.handleClick}
-                color="inherit">
-                { userAvatar  ? (
-                  <ImageLoader
-                    className={classes.avatarImage}
-                    src={userAvatar}
-                    loading={() => <AccountCircle />}
-                    error={() => <AccountCircle />} />
-                ) : (
-                  <AccountCircle />
-                )}
-                <p> {username} </p>
-              </IconButton>
-            </MenuItem>
-          ) : (
-            <MenuItem onClick={this.handleClickLogin}>
-              <Button color="inherit" onClick={this.handleClick}>
-                {'Login'}
-              </Button>
-            </MenuItem>
-          )}
-      </Menu>
-    );
+    //       {loggedIn ? (
+    //         <MenuItem onClick={this.handleClickLogin}>
+    //           <IconButton
+    //             aria-owns={openAnchor ? 'menu-appbar' : null}
+    //             aria-haspopup="true"
+    //             onClick={this.handleClick}
+    //             color="inherit">
+    //             { userAvatar  ? (
+    //               <ImageLoader
+    //                 className={classes.avatarImage}
+    //                 src={userAvatar}
+    //                 loading={() => <AccountCircle />}
+    //                 error={() => <AccountCircle />} />
+    //             ) : (
+    //               <AccountCircle />
+    //             )}
+    //             <p> {username} </p>
+    //           </IconButton>
+    //         </MenuItem>
+    //       ) : (
+    //         <MenuItem onClick={this.handleClickLogin}>
+    //           <Button color="inherit" onClick={this.handleClick}>
+    //             {'Login'}
+    //           </Button>
+    //         </MenuItem>
+    //       )}
+    //   </Menu>
+    // );
 
     return (
       <div className={classes.root}>

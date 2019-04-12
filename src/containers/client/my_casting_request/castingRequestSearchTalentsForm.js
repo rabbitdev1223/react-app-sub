@@ -11,7 +11,6 @@ import TalentTable from './talentTable';
 import TalentSearchBar from './talentSearchBar';
 import ClientAPI from 'apis/clientAPIs';
 import * as clientActions from 'actions/clientActions';
-import { arrayUnique } from 'utils/appUtils';
 import styles from 'styles';
 
 

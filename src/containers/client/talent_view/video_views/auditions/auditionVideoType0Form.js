@@ -1,14 +1,11 @@
 import React, {Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
 import Panel from 'components/general/panel';
-import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 import { styles } from 'styles';
 import Spacer from "components/general/spacer";
 import VideoPlayer from 'components/shiptalent/videos/videoPlayer';
-import { findVideoByPriority, findVideoIndexByPriority } from 'utils/appUtils';
+import { findVideoByPriority } from 'utils/appUtils';
 
 
 class AuditionVideoType0Form extends Component {
@@ -61,7 +58,6 @@ class AuditionVideoType0Form extends Component {
         video_audition_title,
         video_audition_sub_title,
         helpful_hint,
-        download_link,
         introduction_title,
         introduction_link,
         instruction_button_title,
@@ -186,22 +182,8 @@ class AuditionVideoType0Form extends Component {
   };
 
   renderVideos() {
-    const { classes, talent } = this.props
     const {
-      subSkill,
-      talent_video_sub_skills,
-      id,
-      name,
       video_counts,
-      video_audition_button_title,
-      video_audition_title,
-      video_audition_sub_title,
-      introduction_title,
-      introduction_link,
-      instruction_button_title,
-      instruction_button_link,
-      download_link,
-      is_special_video_audition
     } = this.state;
 
     let renderVideosStep = this.renderOneVideo;
@@ -220,8 +202,6 @@ class AuditionVideoType0Form extends Component {
         break;
     }
 
-    let title = video_audition_title;
-
     return (
       <Grid container spacing={16} justify="center" alignItems="center">
         <Grid item lg={12} md={12} sm={12} xs={12}>
@@ -232,9 +212,7 @@ class AuditionVideoType0Form extends Component {
   }
 
   renderContents() {
-    const { classes, contentTitle, allPositionTypes } = this.props
-    const { subSkill } = this.state
-    let name = subSkill ? subSkill.name : ''
+    const { contentTitle } = this.props
 
     return (
       <Panel title={contentTitle}>

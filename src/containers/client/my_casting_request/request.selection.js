@@ -1,12 +1,10 @@
 import React, {Component} from 'react'
 import {connect} from "react-redux";
-import {Redirect} from 'react-router'
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import ClientForm from 'components/shiptalent/forms/clientForm';
 import ColumnButton from 'components/shiptalent/buttons/columnButton';
 import Spacer from "components/general/spacer";
-import {requestView} from "actions/clientActions";
 import styles from 'styles';
 
 

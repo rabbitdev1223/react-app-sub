@@ -490,8 +490,6 @@ class ProfileSearch extends Component {
   };
 
   renderSearchByNameAndID = () => {
-    const { classes } = this.props;
-
     return (
       <Grid container spacing={16} justify="flex-start" alignItems="center">
         <Grid item lg={12} md={12} sm={12} xs={12} >

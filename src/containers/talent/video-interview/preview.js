@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 import Dialog from 'material-ui/Dialog';
 import SelectField from 'material-ui/SelectField';
@@ -244,7 +243,6 @@ class VideoPreview extends React.Component {
   };
 
   renderContents (position) {
-    const { positionName } = position ? position.name : '';
     const {
       settingDlg, 
       resolution, 
@@ -253,8 +251,7 @@ class VideoPreview extends React.Component {
       audioDevices, 
       videoDevices, 
       selectedAudio, 
-      selectedVideo, 
-      has_sub_position_type,
+      selectedVideo,
       startingResolution,
       maxWidth,
       maxHeight,
@@ -269,7 +266,7 @@ class VideoPreview extends React.Component {
         onClick={this.handleDialogClose}
       />,
     ];
-    const { talentInfo, classes } = this.props;
+    const { classes } = this.props;
     const resolutions = VideoResolutions.slice(startingResolution);
     const videoWidth = Math.min(resolution === -1 ? maxWidth : VideoResolutions[resolution]['width'], MAX_RESOLUTION.width);
     const videoHeight = Math.min(resolution === -1 ? maxHeight : VideoResolutions[resolution]['height'], MAX_RESOLUTION.height);
@@ -434,7 +431,6 @@ class VideoPreview extends React.Component {
   render() {
     const position = getValueFromLocation(this.props, 'position');
     const positionName = position ? position.name : '';
-    const { has_sub_position_type } = this.state;
 
     return (
       <TalentForm

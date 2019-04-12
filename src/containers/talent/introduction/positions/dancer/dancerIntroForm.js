@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
-import Typography from '@material-ui/core/Typography';
 import Panel from 'components/general/panel';
 import DancerIntroCommon from './dancerIntroCommon';
 import styles from 'styles';
@@ -10,8 +8,6 @@ import styles from 'styles';
 class DancerIntroForm extends Component {
 
   render() {
-    const { classes } = this.props;
-
     return (
       <Panel>
         <Grid container spacing={16} justify="center" alignItems="center">

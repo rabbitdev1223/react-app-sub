@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import { bindActionCreators } from 'redux';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';

@@ -3,7 +3,6 @@ import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import ClientForm from 'components/shiptalent/forms/clientForm';
 import Panel from 'components/general/panel';
-import Spacer from "components/general/spacer";
 import CallBackTalentTable from './CallBackTalentTable';
 import ClientAPI from 'apis/clientAPIs';
 import styles from 'styles';

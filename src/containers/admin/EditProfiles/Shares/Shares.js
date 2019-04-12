@@ -41,7 +41,6 @@ class Shares extends React.Component  {
   componentWillReceiveProps = (nextProps) => this.setState({...this.getInfoFromProps(nextProps)});
 
   renderContent() {
-    const { profile } = this.props;
     const { userIds, noteTypes } = this.state;
 
     return (
