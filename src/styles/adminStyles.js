@@ -1156,6 +1156,12 @@ export const adminStyles = theme => ({
   adminDateYearButton: {
     marginRight: 10
   },
+  adminNoItemText: {
+    fontSize: '0.85rem',
+    color: theme.palette.grey.main,
+    fontStyle: 'italic',
+    fontWeight: 100
+  }
 });
 
 export const themeAdmin = createMuiTheme ({
