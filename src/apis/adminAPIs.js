@@ -143,5 +143,9 @@ class AdminAPI {
   static getAgencyOverview(handleResponse) {
     this.processRequestWithToken(`agency/overview/overview`, 'get', null, handleResponse);
   }
+
+  static searchInvoice(data, handleResponse) {
+    this.processRequestWithToken(`agency/invoice/search`, 'post', data, handleResponse);
+  }
 }
 export default AdminAPI

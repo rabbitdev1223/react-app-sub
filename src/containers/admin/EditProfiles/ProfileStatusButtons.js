@@ -59,7 +59,7 @@ class ProfileStatusButtons extends Component {
           <ProfileStatusButton link="/admin/edit-profiles/languages" requireApproval={true} title="Languages" />
         </Grid>
         <Grid item xs={4} >
-          <ProfileStatusButton link="#" requireApproval={false} title="Finance" />
+          <ProfileStatusButton link="/admin/edit-profiles/finances" requireApproval={false} title="Finance" />
         </Grid>
         <Grid item xs={4} >
           <ProfileStatusButton link="/admin/edit-profiles/calendar" requireApproval={false} title="Calendar" />

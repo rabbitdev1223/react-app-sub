@@ -227,7 +227,8 @@ export default {
 		CONTRACT_COMPLETED: {name: 'contract_completed', title: 'SORT TALENT BY CONTRACTS COMPLETED'},
 		MEDICAL: {name: 'medical', title: 'SHOW TALENT WITH MEDICAL'},
 		LOCKOUTS: {name: 'lockouts', title: 'SORT TALENT BY COMBO LOCKOUTS'}
-	}
+	},
+	ADMIN_CONTRACT_TABLE_HEADER: ['INV DATE', 'INV NBR', 'INV AMT', 'AMT PAID', 'DATE PAID', 'BALANCE']
 };
 
 

@@ -31,6 +31,7 @@ import PersonalInformation from 'containers/admin/EditProfiles/PersonalInformati
 import Immigration from 'containers/admin/EditProfiles/Immigration/Immigration';
 import Languages from 'containers/admin/EditProfiles/Languages/Languages';
 import Calendar from 'containers/admin/EditProfiles/Calendar/Calendar';
+import Finances from 'containers/admin/EditProfiles/Finances/Finances';
 import DashboardPage from "containers/admin/Dashboard/Dashboard.jsx";
 import ProfileSearch from "containers/admin/ProfileSearch/ProfileSearch.jsx";
 import ProfileSearchResults from "containers/admin/ProfileSearch/ProfileSearchResults";
@@ -274,7 +275,13 @@ const adminPageRoutes = [
     component: Calendar,
     layout: TemplateAdminSidebar,
     exact: true
-  },  
+  },
+  {
+    path: "/admin/edit-profiles/finances",
+    component: Finances,
+    layout: TemplateAdminSidebar,
+    exact: true
+  },
   {
     path: "/admin/profile-search-results",
     component: ProfileSearchResults,

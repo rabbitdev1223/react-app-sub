@@ -23,8 +23,8 @@ import MultiRangeCalendar from 'components/shiptalent/calendars/multiRangeCalend
 import { styles } from 'styles';
 
 const FIRST_YEAR = (new Date().getFullYear()).toString()
-const SECOND_YEAR = (parseInt(FIRST_YEAR, 10) + 1, 10).toString()
-const THIRD_YEAR = (parseInt(FIRST_YEAR, 10) + 2, 10).toString()
+const SECOND_YEAR = (parseInt(FIRST_YEAR, 10) + 1).toString()
+const THIRD_YEAR = (parseInt(FIRST_YEAR, 10) + 2).toString()
 const YEARS = [ FIRST_YEAR, SECOND_YEAR, THIRD_YEAR ]
 
 function TabContainer({ children, dir }) {
@@ -384,7 +384,7 @@ class MyAvailability extends Component {
                   >
                     <TabContainer dir={'x'}>{this.renderMultiRangeCalendars(YEARS[0])}</TabContainer>
                     {<TabContainer dir={'x'}>{this.renderMultiRangeCalendars(YEARS[1])}</TabContainer>}
-                    {<TabContainer dir={'x'}>{this.renderMultiRangeCalendars(YEARS[0])}</TabContainer>}
+                    {<TabContainer dir={'x'}>{this.renderMultiRangeCalendars(YEARS[2])}</TabContainer>}
                   </SwipeableViews>
                 </Grid>
                 <Grid item xs={12} md={12} sm={12}>

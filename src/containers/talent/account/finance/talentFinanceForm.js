@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Grid from '@material-ui/core/Grid';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -9,7 +11,8 @@ import RemoveIcon from '@material-ui/icons/Remove';
 import Panel from 'components/general/panel';
 import Spacer from "components/general/spacer";
 import styles from 'styles';
-
+import AdminAPI from "apis/adminAPIs";
+import Finance from "./Finance";
 
 const ccl = {
   client_type: 'CCL',
@@ -60,7 +63,27 @@ const rsw = {
 
 
 class TalentFinanceForm extends Component {
+  state = {
+    castingRequestTalents: []
+  };
 
+  getInfoFromProps = (props) => {
+    const { profile } = props;
+    
+    if (profile) {
+      AdminAPI.searchCastingRequestTalent({talent_id: profile.id}, this.handleResponsCastingRequestTalent);
+    }
+  };
+
+  handleResponsCastingRequestTalent = (response, isFailed) => {
+    if (isFailed) {}
+    else this.setState({castingRequestTalents: response});
+  };
+  
+  componentWillMount = () => this.setState({...this.getInfoFromProps(this.props)});
+
+  componentWillReceiveProps = (nextProps) => this.setState({...this.getInfoFromProps(nextProps)});
+ 
   renderGeneralHeader(financeData) {
     const { classes } = this.props;
     return (
@@ -161,72 +184,34 @@ class TalentFinanceForm extends Component {
   }
 
   render() {
-    const { classes } = this.props;
+    const { castingRequestTalents } = this.state;
 
     return (
       <Panel>
-        <Grid container spacing={40} justify="center" alignItems="center">
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Spacer size={10}/>
-          </Grid>
-
-          <Grid item lg={1} md={1} sm={1} xs={1} className={ classes.financeIconGridItem } >
-            <Link to="#">
-              <RemoveIcon className={ classes.financeIcon } />
-            </Link>
-          </Grid>
-          <Grid item lg={11} md={11} sm={11} xs={11} className={ classes.financeTable } >
-            { this.renderFinanceTable(ccl) }
-          </Grid>
-
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Spacer size={5}/>
-          </Grid>
-
-          <Grid item lg={1} md={1} sm={1} xs={1} className={ classes.financeIconGridItem } >
-            <Link to="#">
-              <AddIcon className={ classes.financeIcon } />
-            </Link>
-          </Grid>
-          <Grid item lg={11} md={11} sm={11} xs={11} className={ classes.financeTable } >
-            { this.renderFinanceTable(ncl) }
-          </Grid>
-
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Spacer size={50}/>
-          </Grid>
-
-          <Grid item lg={1} md={1} sm={1} xs={1} className={ classes.financeIconGridItem } >
-            <Link to="#">
-              <AddIcon className={ classes.financeIcon } />
-            </Link>
-          </Grid>
-          <Grid item lg={11} md={11} sm={11} xs={11} className={ classes.financeTable } >
-            { this.renderFinanceTable(rci) }
-          </Grid>
-
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Spacer size={50}/>
-          </Grid>
-          <Grid item lg={1} md={1} sm={1} xs={1} className={ classes.financeIconGridItem } >
-            <Link to="#">
-              <AddIcon className={ classes.financeIcon } />
-            </Link>
-          </Grid>
-          <Grid item lg={11} md={11} sm={11} xs={11} className={ classes.financeTable } >
-            { this.renderFinanceTable(rsw) }
-          </Grid>
-
-          <Grid item lg={12} md={12} sm={12} xs={12}>
-            <Spacer size={50}/>
-          </Grid>
-
+        <Grid container spacing={32} justify="flex-start" alignItems="flex-start">
+          {castingRequestTalents.map((crt, index) => {
+            return (
+              <Grid item lg={12} md={12} xs={12} key={index}>  
+                <Finance castingRequestTalent={crt} key={`finance-${index}`}/> 
+              </Grid>
+            );
+          })}
         </Grid>
       </Panel>
     )
   }
 }
 
+const mapStateToProps = state => {
+  const { talentInfo } = state;
+  return {
+    profile: talentInfo.value
+  };
+};
 
-export default withStyles(styles)(TalentFinanceForm);
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(TalentFinanceForm));
 
