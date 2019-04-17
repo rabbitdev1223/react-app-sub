@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import createHistory from 'history/createBrowserHistory';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
@@ -8,10 +7,7 @@ import Routes from './routes/index';
 import './static/css/App.css';
 import './static/css/vendor-styles.css';
 
-const history = createHistory();
-
-const { store, persistor } = configureStore(history);
-
+const { store, persistor } = configureStore();
 
 class App extends Component {
 

@@ -4,10 +4,12 @@ import { persistReducer, persistStore } from 'redux-persist'
 import { routerMiddleware } from 'react-router-redux'
 import apiMiddleware from './middleware';
 import rootReducer from './reducers'
-
+import createHistory from 'history/createBrowserHistory';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-export default (history) => {
+export const history = createHistory();
+
+export default () => {
   // const persistedFilter = createFilter(
   //   'auth', ['access', 'refresh'], 'talentInfo', 'clientInfo', 'selectedProfile'
   // );

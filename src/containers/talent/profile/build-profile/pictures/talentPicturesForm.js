@@ -229,14 +229,16 @@ class TalentPicturesForm extends Component {
           <Col xs="12" md="12" className="pt-3 pt-md-3 profile-picture-image-col">
             {
               progressing && isOwnerPicture ? (
-                <CircularProgress className={classes.talentProfileVideoGreetingImage}/>
+                <div className="profile-picture-image">
+                  <CircularProgress className={classes.talentProfileVideoGreetingImage}/>
+                </div>
               ) : (
                 <div>
                   <div onClick={() => this.showImage(picture)}>
                     <ImageLoader
                       className="profile-picture-image"
                       src={havePicture ? picture.url : require('images/missing.png')}
-                      loading={() => <div className={classes.talentProfileVideoGreetingImage}>Loading...</div>}
+                      loading={() => <div className="profile-picture-image"><CircularProgress className={classes.talentProfileVideoGreetingImage}/></div>}
                       error={() => <div>Error</div>}
                     />
                   </div>

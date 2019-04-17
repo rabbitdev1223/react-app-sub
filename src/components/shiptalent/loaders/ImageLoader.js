@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ImageLoader from 'react-loading-image';
 import ImageLightbox from 'react-image-lightbox';
 import { withStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import styles from 'styles';
 
 
@@ -22,7 +23,7 @@ class ShipTalentImageLoader extends React.Component {
       <ImageLoader
         src={src}
         className={imageClassName}
-        loading={() => <img src={require('images/missing.png')} className={imageClassName} />}
+        loading={() => <CircularProgress style={{margin: 'auto'}}/>}
         error={() => <img src={require('images/missing.png')} className={imageClassName} />}
       />
     );

@@ -3,6 +3,7 @@ import { Row, Col, Alert } from 'reactstrap';
 import { connect } from 'react-redux';
 import Checkbox from '@material-ui/core/Checkbox';
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -59,10 +60,8 @@ class TalentLanguageForm extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      ...this.getInfoFromProps(nextProps),
-      isChanged: false
-    })
+    console.log('==== willReceiveProps: ', nextProps.talentInfo);
+    if (!this.state.isChanged) this.setState({...this.getInfoFromProps(nextProps)})
   }
 
   handleFluencyChange = (event) => {
@@ -144,10 +143,10 @@ class TalentLanguageForm extends Component {
   isCheckedLanguage = name => {
     const { checkedLanguages } = this.state
     let key = this.getKeyOfCheckedLanguageByName(name)
-    return key ? checkedLanguages[key].checked : false
+    return key === null ? false : checkedLanguages[key].checked
   }
 
-  getKeyOfCheckedLanguageByName = (name) => {
+  getKeyOfCheckedLanguageByName = name => {
     const { checkedLanguages } = this.state
     let res = null
 
@@ -209,25 +208,17 @@ class TalentLanguageForm extends Component {
         className="profile-language-fluency-group"
         value={fluency}
         onChange={this.handleFluencyChange}>
-
-        <FormControlLabel
-          value="Fluent"
-          control={<Radio color="primary" />}
-          label="Fluent"
-          disabled={disabled}
-        />
-        <FormControlLabel
-          value="Conversational"
-          control={<Radio color="primary" />}
-          label="Conversational"
-          disabled={disabled}
-        />
-        <FormControlLabel
-          value="Basic"
-          control={<Radio color="primary" />}
-          label="Basic"
-          disabled={disabled}
-        />
+        {defaultValues.FLUENCY_TYPES.map((fluency, index) => {
+          return (
+            <FormControlLabel
+              value={fluency}
+              control={<Radio color="primary" />}
+              label={fluency}
+              disabled={disabled}
+              key={index}
+            />
+          )
+        })}
 
       </RadioGroup>
     )
@@ -238,278 +229,69 @@ class TalentLanguageForm extends Component {
 
     return (
       <Panel title={contentTitle}>
-        <Typography>
-          Speeking more than one language is a big deal at sea.
-          Tell use the languages you speak and your fluency in each.
-          Be honest and realistic. The cruise line will test you.
-        </Typography>
-
-        <Row className="profile-gender-row">
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('English')}
-                      onChange={this.handleChange('English')}
-                      value="English"
-                      color="primary"
-                    />
-                  }
-                  label="English"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('English') }
-              </Col>
-            </Row>
-          </Col>
-
-
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Italian')}
-                      onChange={this.handleChange('Italian')}
-                      value="Italian"
-                      color="primary"
-                    />
-                  }
-                  label="Italian"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Italian') }
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Row className="profile-gender-row">
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Spanish')}
-                      onChange={this.handleChange('Spanish')}
-                      value="Spanish"
-                      color="primary"
-                    />
-                  }
-                  label="Spanish"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Spanish') }
-              </Col>
-            </Row>
-          </Col>
-
-
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Japanese')}
-                      onChange={this.handleChange('Japanese')}
-                      value="Japanese"
-                      color="primary"
-                    />
-                  }
-                  label="Japanese"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Japanese') }
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Row className="profile-gender-row">
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Portuguese')}
-                      onChange={this.handleChange('Portuguese')}
-                      value="Portuguese"
-                      color="primary"
-                    />
-                  }
-                  label="Portuguese"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Portuguese') }
-              </Col>
-            </Row>
-          </Col>
-
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Mandarin')}
-                      onChange={this.handleChange('Mandarin')}
-                      value="Mandarin"
-                      color="primary"
-                    />
-                  }
-                  label="Mandarin"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Mandarin') }
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Row className="profile-gender-row">
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('German')}
-                      onChange={this.handleChange('German')}
-                      value="German"
-                      color="primary"
-                    />
-                  }
-                  label="German"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('German') }
-              </Col>
-            </Row>
-          </Col>
-
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Cantonese')}
-                      onChange={this.handleChange('Cantonese')}
-                      value="Cantonese"
-                      color="primary"
-                    />
-                  }
-                  label="Cantonese"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Cantonese') }
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Row className="profile-gender-row">
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('French')}
-                      onChange={this.handleChange('French')}
-                      value="French"
-                      color="primary"
-                    />
-                  }
-                  label="French"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('French') }
-              </Col>
-            </Row>
-          </Col>
-
-          <Col xs="12" md="6" lg="6" xl="6" className="pt-0 pt-md-0" >
-            <Row>
-              <Col xs="12" className="pt-0 pt-md-0">
-                <FormControlLabel
-                  control={
-                    <Checkbox
-                      checked={this.isCheckedLanguage('Russian')}
-                      onChange={this.handleChange('Russian')}
-                      value="Russian"
-                      color="primary"
-                    />
-                  }
-                  label="Russian"
-                />
-              </Col>
-              <Col xs="12" className="pt-0 pt-md-0">
-                { this.renderFluencyView('Russian') }
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-
-        <Row className="profile-gender-row">
-          <Col xs="12" md="7" className="pt-4 pt-md-4"> </Col>
-          <Col xs="12" md="5" className="pt-3 pt-md-3 profile-save-button-group-col">
-            <Button size="large"
-                    className={classes.button}
-                    onClick={this.handleCancel} >
-              {'Cancel'}
-            </Button>
-            <Button size="large" color="primary"
-                    className={classes.button}
-                    onClick={this.handleSave}>
-              {'Save'}
-            </Button>
-          </Col>
-        </Row>
+        <Grid container spacing={24} justify="flex-start" alignItems="flex-start"> 
+          <Grid item lg={1} md={1} sm={12} xs={12} />
+          <Grid item lg={10} md={10} sm={12} xs={12} >
+            <Grid container spacing={24} justify="flex-start" alignItems="flex-start">
+              <Grid item xs={12}>
+                <Typography className={classes.descriptionText}>
+                  Speeking more than one language is a big deal at sea.
+                  Tell use the languages you speak and your fluency in each.
+                  Be honest and realistic. The cruise line will test you.
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <Grid container spacing={16} justify="flex-start" alignItems="flex-start">
+                  {defaultValues.LANGUAGES.map((language, index) => {
+                    return (
+                      <Grid item lg={6} md={6} sm={12} xs={12} key={`grid-${index}`}>
+                        <Grid container spacing={16} justify="flex-start" alignItems="flex-start">
+                          <Grid item xs={12}>
+                            <FormControlLabel
+                              key={`from-control-label-${index}`}
+                              control={
+                                <Checkbox
+                                  checked={this.isCheckedLanguage(language)}
+                                  onChange={this.handleChange(language)}
+                                  value={language}
+                                  color="primary"
+                                />
+                              }
+                              label={language}
+                            />
+                          </Grid>
+                          <Grid item xs={12}>
+                            { this.renderFluencyView(language) }
+                          </Grid>
+                        </Grid>
+                      </Grid>
+                    )
+                  })}
+                </Grid>
+              </Grid>
+              <Grid item xs={12} className={"profile-save-button-group-col"}>
+                <Button 
+                  size="large"
+                  className={classes.button}
+                  onClick={this.handleCancel} 
+                >
+                  {'Cancel'}
+                </Button>
+                <Button
+                  size="large" color="primary"
+                  className={classes.button}
+                  onClick={this.handleSave}
+                >
+                  {'Save'}
+                </Button>
+              </Grid>
+            </Grid>
+          </Grid>
+          <Grid item lg={1} md={1} sm={12} xs={12} />
+        </Grid>
       </Panel>
     )
   }
-
-  //
-  // renderPreview() {
-  //   const {showConfirmChanges} = this.state
-  //   return (
-  //     <div className="profile-language-container">
-  //       {this.state.notification && <Alert color="info">{this.state.notification}</Alert>}
-  //
-  //       {this.renderContents()}
-  //
-  //       <Row >
-  //         <Col xs="12" md="8" className="pt-4 pt-md-4"> </Col>
-  //         <Col xs="12" md="4" className="pt-3 pt-md-3 profile-save-button-group-col">
-  //           <Link to="/edit-profile" onClick={this.checkChanges}>
-  //             <RaisedButton label="Back to Build/Edit My Profile" primary={true}/>
-  //           </Link>
-  //         </Col>
-  //       </Row>
-  //
-  //       <ConfirmChangesDialog
-  //         open={showConfirmChanges}
-  //         onClose={this.handleCloseConfirm}
-  //       />
-  //     </div>
-  //   )
-  // }
 
   render() {
     return (
@@ -522,7 +304,10 @@ class TalentLanguageForm extends Component {
 }
 
 function mapStateToProps(state) {
-  return {}
+  // const {talentInfo} = state
+  return {
+    // talentInfo: talentInfo.value
+  }
 }
 
 function mapDispatchToProps(dispatch) {

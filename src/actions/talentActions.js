@@ -21,7 +21,7 @@ export const getSignedUrl = (url, params) => ({
 export const getCurrentTalentInfo = () => {
   let token = getToken();
   let headers = { 'Content-Type': 'application/json' };
-
+  console.log('==== getCurrentTalentInfo: ')
   if (token) headers = {...headers, 'Authorization': `Bearer ${token}`};
 
   return {

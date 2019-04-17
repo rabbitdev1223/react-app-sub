@@ -1,7 +1,9 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
+import EditIcon from '@material-ui/icons/Edit';
 import TalentPicture from './TalentPicture';
 import styles from 'styles';
 
@@ -9,11 +11,16 @@ import styles from 'styles';
 class TalentPictures extends Component {
 
   render() {
-    const { pictures, classes } = this.props;
+    const { pictures, showEdit, classes } = this.props;
     if (pictures) {
       return (
         <Grid container spacing={8} direction="column" justify="center" alignItems="center">
-          <Grid item xs={12}>
+          <Grid item xs={12} className={classes.talentProfileSpecialInfoNameCol}> 
+            { showEdit && (
+              <Link to="/pictures-info">
+                <EditIcon className={classes.talentProfileSpecialInfoEditIcon}/>
+              </Link>
+            )}
             <Typography className="profile-picture-name">{"Pictures"}</Typography>
           </Grid>
           <Grid item xs={12}>

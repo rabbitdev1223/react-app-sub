@@ -175,6 +175,12 @@ export function getLiveVideosByPositionName(talent_videos, positionName) {
   return res;
 }
 
+export function getMedicalConditionValueByName (talentMedicals, name) {
+  let talentMedical = talentMedicals.find(tm => tm.condition_title === name)
+  if (talentMedical) return talentMedical.condition_value
+  return false
+}
+
 export function checkPreviousShipMedical(medicals) {
   let checkingMedicals = [
     'Pregnancy',

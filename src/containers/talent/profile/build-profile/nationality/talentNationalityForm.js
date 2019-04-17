@@ -93,11 +93,7 @@ class TalentNationalityForm extends Component {
     }
   }
 
-  componentWillMount() {
-    // if (this.props.auth.access && this.props.auth.access.user_id) {
-    //   this.props.talentActions.getCurrentTalentInfo()
-    // }
-  }
+  componentWillMount() {}
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -187,7 +183,7 @@ class TalentNationalityForm extends Component {
     const { visaTypes } = this.state
     let key = this.getKeyOfVisaByName(name, visaTypes)
 
-    if (key) {
+    if (key !== null) {
       visaTypes[key].expiration_date = event.target.value
       this.setState({
         visaTypes,
@@ -204,7 +200,7 @@ class TalentNationalityForm extends Component {
     const { visaTypes } = this.state;
     let key = this.getKeyOfVisaByName(name, visaTypes)
 
-    if (key) {
+    if (key !== null) {
       visaTypes[key].checked = event.target.checked
 
       this.setState({
