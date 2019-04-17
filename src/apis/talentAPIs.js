@@ -1,9 +1,10 @@
 import apiConfig from 'constants/api';
 import { getToken, getUserID } from "service/storage";
 import * as talentAction from "actions/talentActions";
-import configureStore from '../store';
-
-const { store } = configureStore();
+import * as globalNotificationActions from 'actions/globalNotificationActions';
+// import configureStore from '../store';
+import { store } from 'App';
+// const { store } = configureStore();
 
 class TalentAPI {
   static processResponse(response, handleResponse) {
@@ -72,11 +73,33 @@ class TalentAPI {
   }
 
   static saveTalentInfoWithToken(data, handleResponse) {
-    TalentAPI.processRequestWithToken(`talent/${getUserID()}/`, 'put', data, handleResponse)
+    store.dispatch(globalNotificationActions.notify(true, 'progress', 'Saving talent info...'));
+    TalentAPI.processRequestWithToken(
+      `talent/${getUserID()}/`, 
+      'put', 
+      data, 
+      (response, isFailed) => {
+        if(isFailed) store.dispatch(globalNotificationActions.notify(true, 'error', 'Failed to save talent info. Please try later.'));
+        else store.dispatch(globalNotificationActions.notify(true, 'success', 'talent info was saved successfully'));
+        handleResponse(response, isFailed)
+      }
+    )
   }
 
   static changeTalentPassword(data, handleResponse) {
-    TalentAPI.processRequestWithToken(`talent/${getUserID()}/changePassword/`, 'put', data, handleResponse)
+    TalentAPI.processRequestWithToken(
+      `talent/${getUserID()}/changePassword/`, 'put', data, 
+      (response, isFailed) => {
+        if(isFailed) {
+          store.dispatch(globalNotificationActions.notify(
+            true, 'error', 'Failed to save talent info. Please try later.'
+          ));
+        } else {
+          store.dispatch(globalNotificationActions.notify(true, 'success', 'talent info was saved successfully'));
+        }
+        handleResponse(response, isFailed)
+      }
+    )
   }
 
   static addTalentPositionAndSkills(data, handleResponse) {

@@ -11,6 +11,8 @@ import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import WarningIcon from '@material-ui/icons/Warning';
+import Modal from '@material-ui/core/Modal';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { withStyles } from '@material-ui/core/styles';
 
 const variantIcon = {
@@ -90,7 +92,35 @@ const styles2 = theme => ({
   margin: {
     margin: theme.spacing.unit,
   },
+  progress: {
+    top: `calc(50% - 40px)`,
+    position: 'absolute',
+    left: `calc(50% - 40px)`
+  },
+  paper: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+    background: 'transparent',
+    padding: theme.spacing.unit * 4,
+    outline: 'none'
+  },
 });
+
+function getModalStyle() {
+  return {
+    top: `50%`,
+    left: `50%`,
+    transform: `translate(-50%, -50%)`,
+  };
+}
+
+const styleProgressModal = {
+  width: '90%',
+  height: '90%',
+  left: '5%',
+  top: '5%',
+}
 
 class Notifications extends React.Component {
   state = {
@@ -125,6 +155,7 @@ class Notifications extends React.Component {
   };
 
   render() {
+    const { classes } = this.props;
     const { open, type, message } = this.state;
 
     return (
@@ -140,10 +171,21 @@ class Notifications extends React.Component {
         >
           <NotificationContentWrapper
             onClose={this.handleClose}
-            variant={type}
+            variant={type === 'progress' ? 'info' : type}
             message={message}
           />
         </Snackbar>
+        <Modal
+          aria-labelledby="simple-modal-title"
+          aria-describedby="simple-modal-description"
+          open={open && (type === 'progress')}
+          onClose={this.handleClose}
+          style={styleProgressModal}
+        >
+          <div style={getModalStyle()} className={classes.paper}>
+            <CircularProgress className={classes.progress} size={80} />
+          </div>
+        </Modal>
       </div>
     );
   }

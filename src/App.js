@@ -8,6 +8,7 @@ import './static/css/App.css';
 import './static/css/vendor-styles.css';
 
 const { store, persistor } = configureStore();
+export { store };
 
 class App extends Component {
 
