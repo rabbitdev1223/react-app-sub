@@ -15,7 +15,7 @@ class SelectLanguageWizard extends Component {
         backButtonTitle="Back"
         nextLink="/profile-wizard/select-metric"
         nextButtonTitle="Next"
-        saveInfoAPI={TalentAPI.saveTalentInfoWithToken}
+        saveInfoAPI={TalentAPI.saveLanguagesWithToken}
       />
     )
   }

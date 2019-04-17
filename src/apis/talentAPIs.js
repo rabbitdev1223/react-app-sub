@@ -1,5 +1,9 @@
 import apiConfig from 'constants/api';
 import { getToken, getUserID } from "service/storage";
+import * as talentAction from "actions/talentActions";
+import configureStore from '../store';
+
+const { store } = configureStore();
 
 class TalentAPI {
   static processResponse(response, handleResponse) {
@@ -82,8 +86,12 @@ class TalentAPI {
   static saveLanguages(user_id, data, handleResponse) {
     TalentAPI.processRequestWithToken(`talent_language/${user_id}/all`, 'post', data, handleResponse)
   }
+
   static saveLanguagesWithToken(data, handleResponse) {
-    TalentAPI.processRequestWithToken(`talent_language/${getUserID()}/all`, 'post', data, handleResponse)
+    TalentAPI.processRequestWithToken(`talent_language/${getUserID()}/all`, 'post', data, (response, isFailed) => {
+      handleResponse(response, isFailed)
+      store.dispatch(talentAction.getCurrentTalentInfo())
+    })
   }
 
 	static saveMedicals(user_id, data, handleResponse) {

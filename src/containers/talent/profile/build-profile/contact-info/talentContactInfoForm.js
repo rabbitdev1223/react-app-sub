@@ -142,11 +142,16 @@ class TalentContactInfoForm extends Component {
 
   handleRelationshipChange = (event, index, value) => {
     const { emergencyInfo } = this.state;
+    // let newEmergencyInfo = emergencyInfo;
     emergencyInfo['relationship'] = value;
+    // console.log('===== emergencyInfo: ', emergencyInfo);
+    // console.log('===== value: ', value);
+    // console.log('===== newEmergencyInfo: ', newEmergencyInfo);
     this.setState({
       emergencyInfo: emergencyInfo,
       isChanged: true
     }, () => {
+      console.log('===== emergencyInfo: ', emergencyInfo);
       if (this.props.onChange) {
         this.props.onChange(true)
       }
@@ -418,7 +423,7 @@ class TalentContactInfoForm extends Component {
               menuItemStyle={selectItemStyle}
             >
               {defaultValues.EMERGENCY_CONTACT_TYPES.map((contactType, index) => {
-                return <MenuItem value={1} primaryText={contactType} key={index} />
+                return <MenuItem value={contactType} primaryText={contactType} key={index} />
               })}
             </SelectField>
           </Col>

@@ -7,6 +7,7 @@ const initialState = {
   access: false,
   errors: false,
   isAuthenticated: false,
+  loggingIn: false
 }
 
 export default (state=initialState, action) => {
@@ -17,6 +18,7 @@ export default (state=initialState, action) => {
         access: {},
         errors: false,
         isAuthenticated: false,
+        loggingIn: true
     }
     case types.LOGIN.SUCCESS:
       let auth = {
@@ -26,6 +28,7 @@ export default (state=initialState, action) => {
         },
         errors: false,
         isAuthenticated: true,
+        loggingIn: false
       }
       setAuth(auth);
       return auth;
@@ -43,6 +46,7 @@ export default (state=initialState, action) => {
          access: {},
          errors: action.payload.response || {'non_field_errors': action.payload.statusText},
          isAuthenticated: false,
+         loggingIn: false
       }
     case types.LOGOUT.REQUEST:
     case types.LOGOUT.SUCCESS:

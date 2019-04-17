@@ -5,7 +5,7 @@ import Input from '@material-ui/core/Input';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Select from '@material-ui/core/Select';
-import { Row, Col, Alert } from 'reactstrap';
+import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import MenuItem from '@material-ui/core/MenuItem';
@@ -140,124 +140,124 @@ class TalentMetricForm extends Component {
 
     return (
       <Panel title={contentTitle}>
-        <Row className="profile-gender-row">
-          <Col sm="3">
+        <Grid container spacing={24} justify="center" alignItems="center">
+          <Grid item xs={12} className={classes.centerText}/>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <h5>Height</h5>
-          </Col>
-          <Col sm="3">
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <h5>Weight</h5>
-          </Col>
-          <Col sm="3">
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <h5>BMI</h5>
-          </Col>
-          <Col sm="3">
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <h5>Age Range</h5>
-          </Col>
-        </Row>
-        <Row className="profile-gender-row">
-          <Col xs="12" md="3" className="pt-3 pt-md-3">
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <FormControl >
-              <FormLabel htmlFor="uncontrolled-native">&nbsp;USA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EUROPE</FormLabel>
-              <Select
-                value={height}
-                onChange={this.handleChange('height')}
-                defaultValue={HEIGHTS[0]}
-                input={<Input name="height"
-                              id="uncontrolled-native" />}>
-                {
-                  HEIGHTS.map((height, index) => {
-                    let heightInFeet = 0
-                    let heightIntegerInFeet = 0
-                    let heightDecimalInInch = 0
-                    let prefix = ''
-                    let tmp_height = height
-                    if (index === (HEIGHTS.length - 1)) {
-                      tmp_height = HEIGHTS[HEIGHTS.length - 2]
-                      prefix = '>'
-                    }
+                  <FormLabel htmlFor="uncontrolled-native">&nbsp;USA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EUROPE</FormLabel>
+                  <Select
+                    value={height}
+                    onChange={this.handleChange('height')}
+                    defaultValue={HEIGHTS[0]}
+                    input={<Input name="height"
+                                  id="uncontrolled-native" />}>
+                    {
+                      HEIGHTS.map((height, index) => {
+                        let heightInFeet = 0
+                        let heightIntegerInFeet = 0
+                        let heightDecimalInInch = 0
+                        let prefix = ''
+                        let tmp_height = height
+                        if (index === (HEIGHTS.length - 1)) {
+                          tmp_height = HEIGHTS[HEIGHTS.length - 2]
+                          prefix = '>'
+                        }
 
-                    heightInFeet = UnitConverter(parseInt(tmp_height, 10))
-                      .from('cm').to('ft-us')
-                    heightIntegerInFeet = Math.floor(heightInFeet)
-                    heightDecimalInInch = Math.round(UnitConverter(heightInFeet - heightIntegerInFeet).from('ft-us').to('in'))
-                    return (
-                      <MenuItem key={index} value={height} >
-                        &nbsp;{prefix}{heightIntegerInFeet}'{heightDecimalInInch}"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{prefix}{tmp_height}cm
-                      </MenuItem>
-                    )
-                  })
-                }
-              </Select>
-            </FormControl>
-          </Col>
-          <Col xs="12" md="3" className="pt-3 pt-md-3">
-            <FormControl>
-              <FormLabel htmlFor="uncontrolled-native">&nbsp;USA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EUROPE</FormLabel>
-              <Select
-                value={weight}
-                onChange={this.handleChange('weight')}
-                defaultValue={WEIGHTS[0]}
-                input={<Input name="weight" id="uncontrolled-native" />}>
-                {
-                  WEIGHTS.map((weight, index) => {
-                    let weightInLb = 0
-                    let prefix = ''
-                    let tmp_weight = weight
-                    if (index === (WEIGHTS.length - 1)) {
-                      tmp_weight = WEIGHTS[WEIGHTS.length - 2]
-                      prefix = '>'
+                        heightInFeet = UnitConverter(parseInt(tmp_height, 10))
+                          .from('cm').to('ft-us')
+                        heightIntegerInFeet = Math.floor(heightInFeet)
+                        heightDecimalInInch = Math.round(UnitConverter(heightInFeet - heightIntegerInFeet).from('ft-us').to('in'))
+                        return (
+                          <MenuItem key={index} value={height} >
+                            &nbsp;{prefix}{heightIntegerInFeet}'{heightDecimalInInch}"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{prefix}{tmp_height}cm
+                          </MenuItem>
+                        )
+                      })
                     }
-                    weightInLb = Math.round(UnitConverter(tmp_weight).from('lb').to('kg') * 10) / 10
-                    return (
-                      <MenuItem key={index}
-                                value={weight} >
-                        &nbsp;{prefix}{tmp_weight} lbs. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{prefix}{weightInLb} kg
-                      </MenuItem>
-                    )
-                  })
-                }
-              </Select>
-            </FormControl>
-          </Col>
-          <Col xs="12" md="3" className="pt-3 pt-md-3">
+                  </Select>
+                </FormControl>
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
+            <FormControl>
+                  <FormLabel htmlFor="uncontrolled-native">&nbsp;USA &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; EUROPE</FormLabel>
+                  <Select
+                    value={weight}
+                    onChange={this.handleChange('weight')}
+                    defaultValue={WEIGHTS[0]}
+                    input={<Input name="weight" id="uncontrolled-native" />}>
+                    {
+                      WEIGHTS.map((weight, index) => {
+                        let weightInLb = 0
+                        let prefix = ''
+                        let tmp_weight = weight
+                        if (index === (WEIGHTS.length - 1)) {
+                          tmp_weight = WEIGHTS[WEIGHTS.length - 2]
+                          prefix = '>'
+                        }
+                        weightInLb = Math.round(UnitConverter(tmp_weight).from('lb').to('kg') * 10) / 10
+                        return (
+                          <MenuItem key={index}
+                                    value={weight} >
+                            &nbsp;{prefix}{tmp_weight} lbs. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{prefix}{weightInLb} kg
+                          </MenuItem>
+                        )
+                      })
+                    }
+                  </Select>
+                </FormControl>
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <Typography align='center' variant="title" gutterBottom>
               {bmi}
             </Typography>
-          </Col>
-          <Col xs="12" md="3" className="pt-3 pt-md-3">
+          </Grid>
+          <Grid item lg={3} md={4} sm={6} xs={6} className={classes.centerText}>
             <FormControl>
-              <Select
-                value={age_range}
-                onChange={this.handleChange('age_range')}
-                defaultValue={AGES[0]}
-                input={<Input name="age_range" id="uncontrolled-native"/>}
-              >
-                {
-                  Object.keys(AGES).map((key) => {
-                    return (
-                      <MenuItem key={key} value={AGES[key]}>{AGES[key]}</MenuItem>
-                    )
-                  })
-                }
-              </Select>
-            </FormControl>
-          </Col>
-        </Row>
-        <Row className="profile-gender-row">
-          <Col xs="12" md="7" className="pt-4 pt-md-4"> </Col>
-          <Col xs="12" md="5" className="pt-3 pt-md-3 profile-save-button-group-col">
-            <Button size="large"
-                    className={classes.button}
-                    onClick={this.handleCancel} >
+                <Select
+                  value={age_range}
+                  onChange={this.handleChange('age_range')}
+                  defaultValue={AGES[0]}
+                  input={<Input name="age_range" id="uncontrolled-native"/>}
+                >
+                  {
+                    Object.keys(AGES).map((key) => {
+                      return (
+                        <MenuItem key={key} value={AGES[key]}>{AGES[key]}</MenuItem>
+                      )
+                    })
+                  }
+                </Select>
+              </FormControl>
+          </Grid>  
+          <Grid item xs={12} className={"profile-save-button-group-col"}>
+            <Button 
+              size="large"
+              className={classes.button}
+              onClick={this.handleCancel}
+            >
               {'Cancel'}
             </Button>
-            <Button size="large" color="primary"
-                    className={classes.button}
-                    onClick={this.handleSave}>
+            <Button 
+              size="large" color="primary"
+              className={classes.button}
+              onClick={this.handleSave}
+            >
               {'Save'}
             </Button>
-          </Col>
-        </Row>
+          </Grid>
+        </Grid>
       </Panel>
     )
   }
@@ -265,7 +265,6 @@ class TalentMetricForm extends Component {
   render() {
     return (
       <div>
-        {this.state.notification && <Alert color="info">{this.state.notification}</Alert>}
         {this.renderContents()}
       </div>
     )

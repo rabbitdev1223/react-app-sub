@@ -628,7 +628,9 @@ export const styles = theme => ({
   talentProfileVideoGreetingImage: {
     width: '100px',
     height: '100px',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    textAlign: 'center',
+    verticalAlign: 'middle'
   },
   talentProfileGeneralInfoNameCol: {
     fontSize: '1rem!important',
@@ -1211,6 +1213,7 @@ export const styles = theme => ({
     '&:hover': {
       backgroundColor: theme.palette.black.light
     },
+    minWidth: 150
   },
   clientTalentViewVideoButtonText: {
     fontSize: '1rem',
