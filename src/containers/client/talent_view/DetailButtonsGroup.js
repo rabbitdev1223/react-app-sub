@@ -17,7 +17,7 @@ class DetailButtonsGroup extends Component {
         subTitle={statusValue} subTitleClass={classes.clientTalentViewVideoButtonStatusText}
         itemClass={classes.clientTalentViewVideoButtonGridItem}
         buttonClass={classes.clientTalentViewVideoButton}
-        xs={12} color='' fullWidth={false}
+        xs={12} fullWidth={false}
       />
     );
   }

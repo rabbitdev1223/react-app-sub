@@ -43,9 +43,9 @@ class ClientDesktopAppBar extends Component {
 
   componentDidMount() {
     let __this = this;
-    setTimeout(function(){
-      __this.props.clientActions.getCurrentClientInfo();
-    }, 100);
+    // setTimeout(function(){
+    //   __this.props.clientActions.getCurrentClientInfo();
+    // }, 100);
   }
 
   hanldeClickLogout = () => {

@@ -25,12 +25,14 @@ class SkillsSelection extends Component {
           <Grid
             item {...clientDesigns.talentSearch.PositionsTableItems}
             className={classes.clientTalentSearchGenderButtonItem}
+            key={`grid_${i}`}
           >
             <SkillSelection
               skill={skill}
               titleItem={titleItemName}
               onChangeSkill={onChangeSkill}
               onChangeSubSkill={onChangeSubSkill}
+              key={`skill_selection_${i}`}
             />
           </Grid>
         );

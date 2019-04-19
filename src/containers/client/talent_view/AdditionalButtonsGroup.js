@@ -32,7 +32,7 @@ class AdditionalButtonsGroup extends Component {
           onClickButton={this.onClickButton}
         />
         <ColumnButton
-          link={{pathname: '#', state: {talentId}}}
+          link={{pathname: '/client/talent_view', state: {talentId}}}
           itemClass={classes.clientTalentViewMoreInfoButtonGridItem}
           buttonClass={classes.clientTalentViewMoreInfoButton}
           title={'Add to My Casting Request'} titleClass={classes.clientTalentViewVideoButtonText}

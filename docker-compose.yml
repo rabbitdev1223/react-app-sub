@@ -15,8 +15,8 @@ services:
       args: 
         NODE_ENV: development
         NODE_PATH: src/
-        REACT_APP_API_SERVER: http://192.168.0.121:8000
-        REACT_APP_API_URL: http://192.168.0.121:8000/api/v1
+        REACT_APP_API_SERVER: https://www.shiptalent.com
+        REACT_APP_API_URL: http://ww.shiptalent.com/api/v1
       dockerfile: Dockerfile
     volumes:
       - '.:/usr/src/shiptalent_frontend'
