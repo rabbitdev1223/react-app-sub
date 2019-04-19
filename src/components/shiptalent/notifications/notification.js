@@ -126,7 +126,8 @@ class Notifications extends React.Component {
   state = {
     open: false,
     type: '',
-    message: ''
+    message: '',
+    duration: 5000
   };
 
   componentWillMount() {
@@ -136,7 +137,7 @@ class Notifications extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     const { open, type, message } = nextProps;
-    this.setState({open, type, message});
+    this.setState({open, type, message, duration: 5000});
   }
 
   handleClick = () => {
@@ -156,7 +157,7 @@ class Notifications extends React.Component {
 
   render() {
     const { classes } = this.props;
-    const { open, type, message } = this.state;
+    const { open, type, message, duration } = this.state;
 
     return (
       <div>
@@ -166,8 +167,10 @@ class Notifications extends React.Component {
             horizontal: 'left',
           }}
           open={open}
-          autoHideDuration={6000}
+          autoHideDuration={duration}
           onClose={this.handleClose}
+          disableWindowBlurListener={true}
+          key={new Date().getTime()}
         >
           <NotificationContentWrapper
             onClose={this.handleClose}
