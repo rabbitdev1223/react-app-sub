@@ -56,6 +56,7 @@ class CastingRequestView extends React.Component {
     this.setState({ ...this.getInfoFromProps(this.props) }, () => {
       const { castingRequest, castingRequestTalents } = this.state;
       if (castingRequest && !castingRequestTalents) {
+        console.log('==== castingRequest: ', castingRequest)
         ClientAPI.getCastingRequestDetail(castingRequest.id, this.handleGetCastingRequestResponse);
       }
     });

@@ -19,12 +19,6 @@ import { bindActionCreators } from 'redux';
 import * as clientActions from  'actions/clientActions';
 import './header.css'
 import { styles } from 'styles'
-import {
-  Nav,
-  Navbar,
-  Collapse,
-  NavbarToggler,
-} from 'reactstrap';
 
 
 class ClientDesktopAppBar extends Component {
@@ -84,9 +78,7 @@ class ClientDesktopAppBar extends Component {
   };
 
   getUserAvatarFromProps() {
-    const { clientInfo } = this.props
-
-    return null
+    return null;
   }
 
   renderTopbarMenuItem(title, link) {

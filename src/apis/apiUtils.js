@@ -49,16 +49,24 @@ export const processRequest = (url, method, data, handleResponse) => {
 };
 
 export const processRequestWithToken = (url, method, data, handleResponse) => {
-  console.log('==== processRequestWithToken: ', url, data)
-  fetch(`${apiConfig.url}/${url}`, {
+  console.log('==== processRequest: ', url, data);
+  let parameters = {
     method: method,
     headers: {
+      'Accept': 'application/json',
       "Content-Type": "application/json",
       "Authorization": `Bearer ${getToken()}`
-    },
-    body: JSON.stringify(data)
-  })
-    .then(response => response.json())
+    }
+  };
+
+  if (method !== 'get' && data !== '' && data !== null) {
+    parameters = {...parameters, body: JSON.stringify(data)};
+  }
+
+  console.log('==== parameters: ', parameters)
+
+  fetch(`${apiConfig.url}/${url}`, parameters)
+    .then(response => {console.log('=== response: ', response); return response.json()})
     .then(response => {
       processResponse(response, handleResponse)
     })

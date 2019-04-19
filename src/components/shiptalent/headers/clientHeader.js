@@ -93,7 +93,7 @@ class ClientHeader extends Component {
   };
 
   getUserAvatarFromProps() {
-    return {};
+    return null;
   }
 
   renderTopbarMenuItem(title, link) {
@@ -188,44 +188,6 @@ class ClientHeader extends Component {
         <MenuItem onClick={this.handleClickSignUp}>{"Sign Up"}</MenuItem>
       </Menu>
     );
-
-    // const renderMobileMenu = (
-    //   <Menu
-    //     anchorEl={mobileMoreAnchorEl}
-    //     anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-    //     transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-    //     open={isMobileMenuOpen}
-    //     onClose={this.handleMobileMenuClose}
-    //   >
-
-    //       {loggedIn ? (
-    //         <MenuItem onClick={this.handleClickLogin}>
-    //           <IconButton
-    //             aria-owns={openAnchor ? 'menu-appbar' : null}
-    //             aria-haspopup="true"
-    //             onClick={this.handleClick}
-    //             color="inherit">
-    //             { userAvatar  ? (
-    //               <ImageLoader
-    //                 className={classes.avatarImage}
-    //                 src={userAvatar}
-    //                 loading={() => <AccountCircle />}
-    //                 error={() => <AccountCircle />} />
-    //             ) : (
-    //               <AccountCircle />
-    //             )}
-    //             <p> {username} </p>
-    //           </IconButton>
-    //         </MenuItem>
-    //       ) : (
-    //         <MenuItem onClick={this.handleClickLogin}>
-    //           <Button color="inherit" onClick={this.handleClick}>
-    //             {'Login'}
-    //           </Button>
-    //         </MenuItem>
-    //       )}
-    //   </Menu>
-    // );
 
     return (
       <div className={classes.root}>
