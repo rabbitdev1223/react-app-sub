@@ -9,6 +9,11 @@ class GlobalNotification extends Component {
 
   onClose = () => {
     this.props.globalNotificationActions.notify(false, 'info', 'closing this notification.');
+    // let __this = this;
+    // setTimeout(function(){
+    //   __this.props.globalNotificationActions.notify(false, 'info', 'closing this notification.');
+    // }, 2000);
+   
   };
 
   render() {

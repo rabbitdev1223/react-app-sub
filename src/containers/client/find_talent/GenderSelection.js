@@ -42,6 +42,7 @@ class GenderSelection extends Component {
         <Grid
           item {...clientDesigns.talentSearch.PositionsTableItems}
           className={classes.clientTalentSearchGenderButtonItem}
+          key={`gender-${i}`}
         >
           <Button
             color="primary"

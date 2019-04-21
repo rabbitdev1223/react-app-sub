@@ -1,151 +1,85 @@
-import apiConfig from 'constants/api';
-import { getToken } from "service/storage";
+import {
+  processRequestWithToken,
+  processRequestWithNotification,
+} from "./apiUtils";
+import { NOTIFY_MESSAGES } from "constants/notifications";
 
 class AdminAPI {
-  static processResponse(response, handleResponse) {
-    console.log('=== response: ', response);
-    if(response.error) {
-      console.log('error: ', response.error);
-      handleResponse(response.error, true);
-    }
-    else {
-      if (response){
-        console.log('success: ', response);
-        handleResponse(response, false);
-      } else {
-        console.log('error: ', response);
-        handleResponse(response.error, true);
-      }
-    }
-  }
-
-  static processRequest(url, method, data, handleResponse) {
-    console.log('==== processRequest: ', url, data);
-    let params = {
-      method: method,
-      headers: {
-        "Content-Type": "application/json"
-      }
-    };
-
-    if (data) {
-      params = {
-        ...params,
-        body: JSON.stringify(data)
-      };
-    }
-
-    fetch(`${apiConfig.url}/${url}`, params)
-      .then(response => response.json())
-      .then(response => {
-        this.processResponse(response, handleResponse);
-      })
-      .catch(error => {
-        console.log('error: ', error);
-        handleResponse(error, true);
-      })
-  }
-
-  static processRequestWithToken(url, method, data, handleResponse) {
-    console.log('==== processRequest: ', url, data);
-    let parameters = {
-      method: method,
-      headers: {
-        'Accept': 'application/json',
-        "Content-Type": "application/json",
-        "Authorization": `Bearer ${getToken()}`
-      }
-    };
-
-    if (method !== 'get' && data !== '' && data !== null) {
-      parameters = {...parameters, body: JSON.stringify(data)};
-    }
-
-    fetch(`${apiConfig.url}/${url}/`, parameters)
-      .then(response => {console.log('=== response: ', response); return response.json()})
-      .then(response => {
-        this.processResponse(response, handleResponse);
-      })
-      .catch(error => {
-        console.log('error: ', error);
-        handleResponse(error, true);
-      })
-  }
 
   static getProfile(profileId, handleResponse) {
-    this.processRequestWithToken(`talent/${profileId}`, 'get', null, handleResponse);
+    processRequestWithToken(`talent/${profileId}`, 'get', null, handleResponse);
   }
 
   static saveProfile(userId, data, handleResponse) {
-    this.processRequestWithToken(`talent/${userId}`, 'put', data, handleResponse);
+    processRequestWithNotification(`talent/${userId}`, 'put', data, handleResponse, NOTIFY_MESSAGES.SAVE_PROFILE, false);
   }
 
   static saveProfileResume(resumeId, data, handleResponse) {
-    this.processRequestWithToken(`talent_resume/${resumeId}`, 'put', data, handleResponse);
+    processRequestWithNotification(`talent_resume/${resumeId}`, 'put', data, handleResponse, NOTIFY_MESSAGES.SAVE_PROFILE_RESUME, false);
   }
 
   static deleteProfileResume(resumeId, data, handleResponse) {
-    this.processRequestWithToken(`talent_resume/${resumeId}`, 'delete', data, handleResponse);
+    processRequestWithNotification(`talent_resume/${resumeId}`, 'delete', data, handleResponse, NOTIFY_MESSAGES.DELETE_PROFILE_RESUME, false);
   }
 
   static saveProfilePicture(pictureId, data, handleResponse) {
-    this.processRequestWithToken(`talent_picture/${pictureId}`, 'put', data, handleResponse);
+    processRequestWithNotification(`talent_picture/${pictureId}`, 'put', data, handleResponse, NOTIFY_MESSAGES.SAVE_PROFILE_PICTURE, false);
   }
 
   static deleteProfilePicture(pictureId, data, handleResponse) {
-    this.processRequestWithToken(`talent_picture/${pictureId}`, 'delete', data, handleResponse);
+    processRequestWithNotification(`talent_picture/${pictureId}`, 'delete', data, handleResponse, NOTIFY_MESSAGES.DELETE_PROFILE_PICTURE, false);
   }
 
   static getAllCastingRequests(handleResponse) {
-    this.processRequestWithToken(`agency/casting_request/all`, 'get', null, handleResponse);
+    processRequestWithToken(`agency/casting_request/all`, 'get', null, handleResponse);
   }
   
   static searchCastingRequestTalent(data, handleResponse) {
-    this.processRequestWithToken(`agency/casting_request_talent/search`, 'post', data, handleResponse);
+    processRequestWithToken(`agency/casting_request_talent/search`, 'post', data, handleResponse);
   }
 
   static searchCastingRequest(data, handleResponse) {
-    this.processRequestWithToken(`agency/casting_request/search`, 'post', data, handleResponse);
+    processRequestWithToken(`agency/casting_request/search`, 'post', data, handleResponse);
   }
 
   static getCastingRequest(castingRequestId, handleResponse) {
-    this.processRequestWithToken(`agency/casting_request/${castingRequestId}`, 'get', null, handleResponse);
+    processRequestWithToken(`agency/casting_request/${castingRequestId}`, 'get', null, handleResponse);
   }
 
   static setCastingRequestStatus(castingRequestId, data, handleResponse) {
-    this.processRequestWithToken(`agency/casting_request/set_status/${castingRequestId}`, 'put', data, handleResponse);
+    processRequestWithNotification(`agency/casting_request/set_status/${castingRequestId}`, 'put', data, handleResponse, NOTIFY_MESSAGES.SET_CASTING_REQUEST_STATUS, false);
   }
 
   static saveGreetingVideo(videoId, data, handleResponse) {
-    this.processRequestWithToken(`talent_video_greetings/${videoId}`, 'put', data, handleResponse);
+    processRequestWithNotification(`talent_video_greetings/${videoId}`, 'put', data, handleResponse, NOTIFY_MESSAGES.APPROVE_VIDEO_GREETING, false);
   }
 
   static deleteGreetingVideo(videoId, data, handleResponse) {
-    this.processRequestWithToken(`talent_video_greetings/${videoId}`, 'delete', data, handleResponse);
+    processRequestWithNotification(`talent_video_greetings/${videoId}`, 'delete', data, handleResponse, NOTIFY_MESSAGES.DELETE_VIDEO_GREETING, false);
   }
 
   static saveSubSkillVideo(videoId, data, handleResponse) {
-    this.processRequestWithToken(`talent_video_sub_skills/${videoId}`, 'put', data, handleResponse);
+    processRequestWithNotification(`talent_video_sub_skills/${videoId}`, 'put', data, handleResponse, NOTIFY_MESSAGES.APPROVE_SUB_SKILL_VIDEO, false);
   }
 
   static deleteSubSkillVideo(videoId, data, handleResponse) {
-    this.processRequestWithToken(`talent_video_sub_skills/${videoId}`, 'delete', data, handleResponse);
+    processRequestWithNotification(`talent_video_sub_skills/${videoId}`, 'delete', data, handleResponse, NOTIFY_MESSAGES.DELETE_SUB_SKILL_VIDEO, false);
   }
 
   static addNote(data, handleResponse) {
-    this.processRequestWithToken(`agency/user_note/create`, 'post', data, handleResponse);
+    processRequestWithNotification(`agency/user_note/create`, 'post', data, handleResponse, NOTIFY_MESSAGES.ADD_NOTE, false);
   }
 
   static searchNotes(data, handleResponse) {
-    this.processRequestWithToken(`agency/user_note/search`, 'post', data, handleResponse);
+    processRequestWithToken(`agency/user_note/search`, 'post', data, handleResponse);
   }
 
   static getAgencyOverview(handleResponse) {
-    this.processRequestWithToken(`agency/overview/overview`, 'get', null, handleResponse);
+    processRequestWithToken(`agency/overview/overview`, 'get', null, handleResponse);
   }
 
   static searchInvoice(data, handleResponse) {
-    this.processRequestWithToken(`agency/invoice/search`, 'post', data, handleResponse);
+    processRequestWithToken(`agency/invoice/search`, 'post', data, handleResponse);
   }
 }
 export default AdminAPI

@@ -39,6 +39,10 @@ export const getCurrentTalentInfo = () => {
 };
 
 export const getTalentInfo = (id) => {
+  if (id === null) {
+    console.trace('==== talent id is null');
+    return;
+  }
   let token = getToken();
   let headers = { 'Content-Type': 'application/json' };
 

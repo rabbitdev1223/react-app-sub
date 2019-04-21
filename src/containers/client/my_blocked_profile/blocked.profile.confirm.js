@@ -37,7 +37,7 @@ class BlockedProfileConfirm extends Component {
             </Typography>
           </Grid>
 
-          <Grid item lg={12} md={12} sm={10} xs={0}> <Spacer size={50}/> </Grid>
+          <Grid item lg={12} md={12} sm={12} xs={12}> <Spacer size={50}/> </Grid>
 
           <Grid item lg={10} md={10} sm={10} xs={10}>
             <Typography className={classes.wizardSettingSubTitle}>
@@ -48,7 +48,7 @@ class BlockedProfileConfirm extends Component {
             </Typography>
           </Grid>
 
-          <Grid item lg={12} md={12} sm={10} xs={0}> <Spacer size={50}/> </Grid>
+          <Grid item lg={12} md={12} sm={12} xs={12}> <Spacer size={50}/> </Grid>
 
           <Grid item lg={8} md={8} sm={8} xs={8} className={classes.talentProfileGuideButtonItem}>
             <Button

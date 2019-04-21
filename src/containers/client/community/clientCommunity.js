@@ -56,7 +56,6 @@ class ClientCommunity extends Component {
         true, 'error', response['feedback'] ? response['feedback'][0] : 'Failed to sent. Please try later.'
       );
     } else {
-      this.props.globalNotificationActions.notify(true, 'success', 'sent your feedback successfully.');
       this.props.history.push('/client/community/confirm');
     }
   };

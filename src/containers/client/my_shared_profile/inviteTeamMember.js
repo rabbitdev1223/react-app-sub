@@ -78,7 +78,6 @@ class InviteTeamMembers extends Component {
     if(isFailed) {
 
     } else {
-      this.props.globalNotificationActions.notify(true, 'success', 'Invited new team members successfully.');
       this.props.history.push('/client/shared_profile/invite_confirm', {talent});
     }
   };

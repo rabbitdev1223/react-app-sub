@@ -13,6 +13,7 @@ import deviceSettings from './deviceSettings';
 import contactUs from './contactus';
 import {getCurrentClientInfo, talentSearchReducer, requestViewReducer, searchViewReducer} from './clientReducer';
 import globalNotification from './globalNotification';
+import adminReducer from './admin/adminReducer';
 import selectedProfileReducer from './admin/selectedProfileReducer';
 import notesReducer from './admin/notesReducer';
 
@@ -37,6 +38,7 @@ export default combineReducers({
   searchViewReducer,
   clientInfo: getCurrentClientInfo,
   globalNotification,
+  adminInfo: adminReducer,
   selectedProfile: selectedProfileReducer,
   notes: notesReducer
 })

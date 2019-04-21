@@ -268,7 +268,7 @@ class TalentSearch extends Component {
           </Typography>
 
           <FormGroup row>
-            { defaultValues.AGES.map((age) => {
+            { defaultValues.AGES.map((age, index) => {
               return (
                 <FormControlLabel
                   control={
@@ -280,6 +280,7 @@ class TalentSearch extends Component {
                     />
                   }
                   label={age}
+                  key={`age-${index}`}
                 />
               );
             })
@@ -314,6 +315,7 @@ class TalentSearch extends Component {
                     />
                   }
                   label={makeHeightSearchConditionTitle(heightRange)}
+                  key={`height-${index}`}
                 />
               );
             })

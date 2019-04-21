@@ -40,24 +40,23 @@ export const getCurrentClientInfo = () => {
 };
 
 export const getClientInfo = (id) => {
-  if (id) {
-    console.trace('client id is null: ');
-    return {
-      [RSAA]: {
-        endpoint: `${apiConfig.url}/client/${id}/`,
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        types: [
-          types.CLIENT_INFO.REQUEST,
-          types.CLIENT_INFO.SUCCESS,
-          types.CLIENT_INFO.FAILURE
-        ]
-      }}
-  } else {
-    console.trace('client id is null: ');
+  if (id === null) {
+    console.trace('client id is null');
+    return;
   }
+  return {
+    [RSAA]: {
+      endpoint: `${apiConfig.url}/client/${id}/`,
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      types: [
+        types.CLIENT_INFO.REQUEST,
+        types.CLIENT_INFO.SUCCESS,
+        types.CLIENT_INFO.FAILURE
+      ]
+    }}
 };
 
 export const talentSearch = (data) => {
@@ -89,7 +88,9 @@ export const requestView = () => {
         'Authorization': `Bearer ${token}`
       },
       types: [
-        types.REQUEST_VIEW.REQUEST, types.REQUEST_VIEW.SUCCESS, types.REQUEST_VIEW.FAILURE
+        types.REQUEST_VIEW.REQUEST, 
+        types.REQUEST_VIEW.SUCCESS, 
+        types.REQUEST_VIEW.FAILURE
       ]
     }
   })
