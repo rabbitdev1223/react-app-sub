@@ -138,7 +138,7 @@ class TalentFinanceForm extends Component {
     headers.push(this.renderInvoiceHeaderItem('AMT PAID'));
     headers.push(this.renderInvoiceHeaderItem('DATE PAID'));
     headers.push(this.renderInvoiceHeaderItem('BALANCE'));
-    headers.push(<Grid item lg={6} md={6} sm={6} xs={0}/>);
+    headers.push(<Grid item lg={6} md={6} sm={6} xs={12}/>);
 
     return headers;
   }
@@ -173,7 +173,7 @@ class TalentFinanceForm extends Component {
                 items.push(this.renderInvoiceItem(invoice.amt_paid));
                 items.push(this.renderInvoiceItem(invoice.date_paid));
                 items.push(this.renderInvoiceItem(invoice.balance));
-                items.push(<Grid item lg={6} md={6} sm={6} xs={0}/>);
+                items.push(<Grid item lg={6} md={6} sm={6} xs={12}/>);
                 return items;
               })
             }

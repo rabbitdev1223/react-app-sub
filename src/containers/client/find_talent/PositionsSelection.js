@@ -25,6 +25,7 @@ class PositionsSelection extends Component {
           <Grid
             item {...clientDesigns.talentSearch.PositionsTableItems}
             className={classes.clientTalentSearchGenderButtonItem}
+            key={`position-${i}`}
           >
             <PositionSelection
               position={position}

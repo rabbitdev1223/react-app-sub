@@ -95,7 +95,7 @@ class BlockedProfileEdit extends Component {
             </Typography>
           </Grid>
 
-          <Grid item lg={12} md={12} sm={10} xs={0}> <Spacer size={20}/> </Grid>
+          <Grid item lg={12} md={12} sm={10} xs={12}> <Spacer size={20}/> </Grid>
 
           <Grid item lg={10} md={10} sm={10} xs={10}>
             <FormControl component="fieldset">
@@ -105,7 +105,7 @@ class BlockedProfileEdit extends Component {
                 name="expiration"
                 value={expiration}
                 onChange={this.handleChange}
-                column
+                column="true"
               >
                 <FormControlLabel
                   value="hour"

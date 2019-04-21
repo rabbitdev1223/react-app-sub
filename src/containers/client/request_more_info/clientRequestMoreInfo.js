@@ -61,7 +61,6 @@ class ClientRequestMoreInfo extends Component {
         true, 'error', response['request'] ? response['request'][0] : 'Failed to sent. Please try later.'
       );
     } else {
-      this.props.globalNotificationActions.notify(true, 'success', 'sent your request successfully.');
       this.props.history.push({pathname: '/client/request/confirm', state: {talent}});
     }
   };

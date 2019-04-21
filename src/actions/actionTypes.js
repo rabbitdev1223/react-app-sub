@@ -51,6 +51,7 @@ export const CALLBACK_TALENT = createRequestTypes('@@jwt/CALLBACK_TALENT');
 export const FAVORITE_TALENT = createRequestTypes('@@jwt/FAVORITE_TALENT');
 
 // Admin event
+export const ADMIN_INFO = createRequestTypes('@@jwt/ADMIN_INFO');
 export const SET_SELECTED_PROFILE = 'SET_SELECTED_PROFILE';
 export const SEARCH_NOTES = createRequestTypes('@@jwt/SEARCH_NOTES');
 

@@ -144,7 +144,7 @@ class TalentChangePasswordForm extends Component {
                   }}
                 />
               </Grid>
-              <Grid item lg={3} md={3} sm={12} xs={0}/>
+              <Grid item lg={3} md={3} sm={12} xs={12}/>
             </Grid>
           </Grid>
 
@@ -179,7 +179,7 @@ class TalentChangePasswordForm extends Component {
                   }}
                 />
               </Grid>
-              <Grid item lg={3} md={3} sm={12} xs={0}/>
+              <Grid item lg={3} md={3} sm={12} xs={12}/>
             </Grid>
           </Grid>
 
@@ -214,7 +214,7 @@ class TalentChangePasswordForm extends Component {
                   }}
                 />
               </Grid>
-              <Grid item lg={3} md={3} sm={12} xs={0}/>
+              <Grid item lg={3} md={3} sm={12} xs={12}/>
             </Grid>
           </Grid>
 

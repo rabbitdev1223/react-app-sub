@@ -126,7 +126,6 @@ class SelectTeamMembers extends Component {
     if(isFailed) {
 
     } else {
-      this.props.globalNotificationActions.notify(true, 'success', 'Shared profiles successfully.');
       // Get teamMembers you checked
       let newTeamMembers = [];
       for (let i = 1; i < checked.length; i ++) {

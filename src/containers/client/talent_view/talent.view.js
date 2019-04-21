@@ -72,7 +72,6 @@ class TalentView extends React.Component {
     if(isFailed) {
       this.props.globalNotificationActions.notify(true, 'error', response['talent'] ? response['talent'][0] : 'Unhandled error.');
     } else {
-      this.props.globalNotificationActions.notify(true, 'success', 'Added successfully');
       this.props.history.push('/client/callback/confirm', {talentId: response['talent']})
     }
   };

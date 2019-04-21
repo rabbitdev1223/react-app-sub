@@ -73,8 +73,6 @@ class RatingAndComment extends Component {
       // this.setState({ error: true, errorMessage: 'Failed save wages.' });
       this.props.globalNotificationActions.notify(true, 'error', response['talent'] ? response['talent'][0] : 'Failed rating. Please try later.');
     } else {
-      // this.setState({ error: false, errorMessage: false });
-      this.props.globalNotificationActions.notify(true, 'success', 'Add rating of the talent successfully.');
       this.props.history.push('/client/rating_comment/submitted');
     }
   };
